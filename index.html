@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple E-Commerce</title>
+  <link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+  <header>Simple E-Commerce Store</header>
+
+  <!-- Product Section -->
+  <div class="container" id="product-list"></div>
+
+  <!-- Cart Section -->
+  <div class="cart">
+    <h2>Your Cart</h2>
+    <ul class="cart-items" id="cart-items"></ul>
+    <p class="cart-total">Total: $<span id="total">0</span></p>
+    <button class="clear-cart" onclick="clearCart()">Clear Cart</button>
+    <button class="checkout-btn" onclick="openCheckout()">Checkout</button>
+    <div class="confirmation" id="confirmation">Thank you for your order!</div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-form">
+      <h3>Checkout</h3>
+      <input type="text" id="customer-name" placeholder="Full Name" required>
+      <input type="email" id="customer-email" placeholder="Email" required>
+      <input type="text" id="customer-address" placeholder="Address" required>
+      <button onclick="submitOrder()">Submit Order</button>
+      <button class="close-btn" onclick="closeCheckout()">Cancel</button>
+    </div>
+  </div>
+    
+  <script src="script.js"></script>
+</body>
+</html>
