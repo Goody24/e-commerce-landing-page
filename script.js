@@ -1,9 +1,9 @@
    // Sample Products
     const products = [
-      { id: 1, name: "Laptop", price: 800, image: "https://via.placeholder.com/200x150?text=Laptop" },
-      { id: 2, name: "Smartphone", price: 400, image: "https://via.placeholder.com/200x150?text=Phone" },
-      { id: 3, name: "Headphones", price: 50, image: "https://via.placeholder.com/200x150?text=Headphones" },
-      { id: 4, name: "Smart Watch", price: 120, image: "https://via.placeholder.com/200x150?text=Watch" }
+      { id: 1, name: "Laptop", price: 800, image: "images/laptop.jpg" },
+      { id: 2, name: "Smartphone", price: 400, image: "images/phone.jpg" },
+      { id: 3, name: "Headphones", price: 50, image: "images/headphones.jpg" },
+      { id: 4, name: "Smart Watch", price: 120, image: "images/watch.jpg" }
     ];
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -16,20 +16,20 @@
 
     /* Display Products Dynamically */
     function displayProducts() {
-      productList.innerHTML = "";
-      products.forEach(product => {
-        const div = document.createElement('div');
-        div.classList.add('product');
-        div.innerHTML = `
-          <img src="${product.image}" alt="${product.name}">
-          <h3>${product.name}</h3>
-          <p>$${product.price}</p>
-          <button onclick="addToCart(${product.id})">Add to Cart</button>
-        `;
-        productList.appendChild(div);
-      });
-    }
-
+  const productList = document.getElementById('product-list');
+  productList.innerHTML = "";
+  products.forEach(product => {
+    const div = document.createElement('div');
+    div.classList.add('product');
+    div.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>$${product.price}</p>
+      <button onclick="addToCart(${product.id})">Add to Cart</button>
+    `;
+    productList.appendChild(div);
+  });
+}
     /* Add Product to Cart */
     function addToCart(id) {
       const product = products.find(p => p.id === id);
