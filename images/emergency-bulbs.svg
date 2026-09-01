@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="blbBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="bulbGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#FEF08A" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#blbBg)" rx="16" />
+  
+  <!-- Left Bulb: Lit Rechargeable -->
+  <g transform="translate(90, 60)">
+    <!-- Light Glow aura -->
+    <circle cx="90" cy="110" r="85" fill="#FEF08A" opacity="0.4" />
+    
+    <!-- Bulb Globe -->
+    <circle cx="90" cy="100" r="60" fill="url(#bulbGlow)" stroke="#F59E0B" stroke-width="2" />
+    <!-- Lower Body / Battery Housing -->
+    <path d="M 50 130 L 65 200 L 115 200 L 130 130 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2" />
+    <!-- Screw Base (E27) -->
+    <rect x="68" y="200" width="44" height="25" rx="3" fill="#94A3B8" />
+    <line x1="68" y1="206" x2="112" y2="206" stroke="#475569" stroke-width="2" />
+    <line x1="68" y1="213" x2="112" y2="213" stroke="#475569" stroke-width="2" />
+    <line x1="68" y1="220" x2="112" y2="220" stroke="#475569" stroke-width="2" />
+    <path d="M 75 225 L 90 238 L 105 225 Z" fill="#64748B" />
+    
+    <!-- Battery Indicator Icon on Body -->
+    <rect x="80" y="160" width="20" height="10" rx="2" fill="#10B981" />
+    <rect x="100" y="163" width="2" height="4" fill="#10B981" />
+    <text x="90" y="185" font-family="sans-serif" font-weight="bold" font-size="8" fill="#1E293B" text-anchor="middle">5-HR RUN</text>
+  </g>
+
+  <!-- Pack Box (Right Side) -->
+  <g transform="translate(270, 70)">
+    <!-- Box 3D -->
+    <polygon points="20,40 120,10 170,30 70,60" fill="#FF8800" />
+    <polygon points="70,60 170,30 170,220 70,250" fill="#D97706" />
+    <polygon points="20,40 70,60 70,250 20,230" fill="#FF6B00" />
+    
+    <text x="45" y="130" font-family="sans-serif" font-weight="900" font-size="20" fill="#FFFFFF" transform="rotate(22, 45, 130)">10 PACK</text>
+    <text x="45" y="160" font-family="sans-serif" font-weight="bold" font-size="10" fill="#0B192C" transform="rotate(22, 45, 160)">15W RECHARGEABLE</text>
+  </g>
+
+  <text x="250" y="345" font-family="sans-serif" font-weight="bold" font-size="14" fill="#0F172A" text-anchor="middle">SMART RECHARGEABLE EMERGENCY LED BULBS</text>
+</svg>

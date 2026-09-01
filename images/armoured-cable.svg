@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="cableBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="sheathGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="copperGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="50%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+    <linearGradient id="steelArmour" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="50%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#64748B" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#cableBg)" rx="16" />
+  
+  <!-- SWA Armoured Cable Cutaway Visual -->
+  <g transform="translate(60, 90)">
+    <!-- Outer Black PVC Sheath -->
+    <path d="M 0 50 L 140 50 L 140 170 L 0 170 Z" fill="url(#sheathGrad)" />
+    <text x="70" y="115" font-family="sans-serif" font-weight="bold" font-size="11" fill="#FFFFFF" text-anchor="middle">PVC SHEATH</text>
+    
+    <!-- Steel Wire Armouring (SWA) -->
+    <path d="M 140 60 L 220 60 L 220 160 L 140 160 Z" fill="url(#steelArmour)" />
+    <g transform="translate(140, 60)">
+      <line x1="10" y1="0" x2="10" y2="100" stroke="#475569" stroke-width="2" />
+      <line x1="20" y1="0" x2="20" y2="100" stroke="#475569" stroke-width="2" />
+      <line x1="30" y1="0" x2="30" y2="100" stroke="#475569" stroke-width="2" />
+      <line x1="40" y1="0" x2="40" y2="100" stroke="#475569" stroke-width="2" />
+      <line x1="50" y1="0" x2="50" y2="100" stroke="#475569" stroke-width="2" />
+      <line x1="60" y1="0" x2="60" y2="100" stroke="#475569" stroke-width="2" />
+      <line x1="70" y1="0" x2="70" y2="100" stroke="#475569" stroke-width="2" />
+    </g>
+
+    <!-- Inner XLPE Insulation Bedding -->
+    <path d="M 220 70 L 290 70 L 290 150 L 220 150 Z" fill="#1E293B" />
+
+    <!-- 4 Colored Cores Spanning Out -->
+    <!-- Red Core -->
+    <g transform="translate(290, 40)">
+      <rect x="0" y="10" width="60" height="24" rx="6" fill="#DC2626" />
+      <!-- Copper Strands exposed -->
+      <rect x="60" y="13" width="30" height="18" rx="4" fill="url(#copperGrad)" />
+    </g>
+
+    <!-- Yellow Core -->
+    <g transform="translate(290, 75)">
+      <rect x="0" y="10" width="60" height="24" rx="6" fill="#FACC15" />
+      <rect x="60" y="13" width="30" height="18" rx="4" fill="url(#copperGrad)" />
+    </g>
+
+    <!-- Blue Core -->
+    <g transform="translate(290, 110)">
+      <rect x="0" y="10" width="60" height="24" rx="6" fill="#2563EB" />
+      <rect x="60" y="13" width="30" height="18" rx="4" fill="url(#copperGrad)" />
+    </g>
+
+    <!-- Black (Neutral) Core -->
+    <g transform="translate(290, 145)">
+      <rect x="0" y="10" width="60" height="24" rx="6" fill="#0F172A" stroke="#64748B" />
+      <rect x="60" y="13" width="30" height="18" rx="4" fill="url(#copperGrad)" />
+    </g>
+  </g>
+
+  <!-- Certification Stamp -->
+  <g transform="translate(140, 310)">
+    <rect x="0" y="0" width="220" height="40" rx="8" fill="#0B192C" />
+    <text x="110" y="25" font-family="sans-serif" font-weight="900" font-size="12" fill="#FF8800" text-anchor="middle">100% PURE COPPER (SON CERTIFIED)</text>
+  </g>
+</svg>

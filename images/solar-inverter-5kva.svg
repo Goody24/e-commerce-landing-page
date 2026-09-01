@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="invBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+    <linearGradient id="metalBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#invBg)" rx="16" />
+  
+  <!-- Inverter Unit -->
+  <g transform="translate(130, 45)">
+    <!-- Shadow -->
+    <rect x="8" y="10" width="230" height="300" rx="14" fill="#64748B" opacity="0.3" />
+    <!-- Main Inverter Chassis -->
+    <rect x="0" y="0" width="230" height="300" rx="14" fill="url(#metalBody)" stroke="#94A3B8" stroke-width="2" />
+    
+    <!-- Top Accent Bar (ONWAGLOW Orange & Navy) -->
+    <path d="M 0 14 Q 0 0 14 0 L 216 0 Q 230 0 230 14 L 230 25 L 0 25 Z" fill="#0B192C" />
+    <rect x="0" y="25" width="230" height="5" fill="#FF6B00" />
+    
+    <!-- Brand Label -->
+    <text x="115" y="17" font-family="sans-serif" font-weight="900" font-size="11" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">ONWAGLOW 5KVA 48V HYBRID</text>
+
+    <!-- Color LCD Screen -->
+    <rect x="35" y="50" width="160" height="110" rx="8" fill="url(#screenGrad)" stroke="#334155" stroke-width="2" />
+    
+    <!-- Screen Graphics -->
+    <!-- Solar PV to Battery to Load diagram -->
+    <circle cx="65" cy="85" r="14" fill="#FF6B00" />
+    <text x="65" y="89" font-family="sans-serif" font-weight="bold" font-size="9" fill="#FFFFFF" text-anchor="middle">PV</text>
+    
+    <path d="M 85 85 L 115 85" stroke="#38BDF8" stroke-width="2" stroke-dasharray="3 3" />
+    
+    <circle cx="115" cy="85" r="14" fill="#0284C7" />
+    <text x="115" y="89" font-family="sans-serif" font-weight="bold" font-size="8" fill="#FFFFFF" text-anchor="middle">INV</text>
+
+    <path d="M 135 85 L 165 85" stroke="#10B981" stroke-width="2" />
+    
+    <circle cx="165" cy="85" r="14" fill="#10B981" />
+    <text x="165" y="89" font-family="sans-serif" font-weight="bold" font-size="8" fill="#FFFFFF" text-anchor="middle">LOAD</text>
+
+    <!-- Metrics line -->
+    <text x="45" y="125" font-family="monospace" font-weight="bold" font-size="10" fill="#38BDF8">IN: 230V | 50Hz</text>
+    <text x="45" y="145" font-family="monospace" font-weight="bold" font-size="10" fill="#10B981">OUT: 220V | 5.0kW</text>
+    
+    <!-- Status LEDs -->
+    <circle cx="60" cy="185" r="5" fill="#10B981" />
+    <text x="72" y="188" font-family="sans-serif" font-size="8" fill="#475569">NORMAL</text>
+    
+    <circle cx="120" cy="185" r="5" fill="#FF8800" />
+    <text x="132" y="188" font-family="sans-serif" font-size="8" fill="#475569">SOLAR</text>
+
+    <circle cx="180" cy="185" r="5" fill="#3B82F6" />
+    <text x="192" y="188" font-family="sans-serif" font-size="8" fill="#475569">FAULT</text>
+
+    <!-- Control Buttons -->
+    <circle cx="75" cy="225" r="9" fill="#E2E8F0" stroke="#94A3B8" />
+    <circle cx="102" cy="225" r="9" fill="#E2E8F0" stroke="#94A3B8" />
+    <circle cx="128" cy="225" r="9" fill="#E2E8F0" stroke="#94A3B8" />
+    <circle cx="155" cy="225" r="9" fill="#FF6B00" />
+    <text x="155" y="228" font-family="sans-serif" font-size="8" font-weight="bold" fill="#FFF" text-anchor="middle">⏻</text>
+
+    <!-- Bottom Cooling Grills -->
+    <line x1="40" y1="260" x2="190" y2="260" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+    <line x1="40" y1="270" x2="190" y2="270" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+    <line x1="40" y1="280" x2="190" y2="280" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+  </g>
+</svg>

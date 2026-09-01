@@ -1,0 +1,969 @@
+{
+  "users": [
+    {
+      "id": "usr_demo_customer",
+      "name": "Adeola Johnson",
+      "email": "customer@onwaglow.com",
+      "password": "password123",
+      "phone": "08137271212",
+      "role": "customer",
+      "address": "15 Platinum Estate, Aseese, Ogun State",
+      "createdAt": "2026-08-20T10:00:00.000Z"
+    },
+    {
+      "id": "usr_demo_admin",
+      "name": "ONWAGLOW Admin",
+      "email": "admin@onwaglow.com",
+      "password": "admin123",
+      "phone": "08051996449",
+      "role": "admin",
+      "address": "Onwa Electronics, 4 Baale Palace, Ogun State, Nigeria",
+      "createdAt": "2026-08-20T08:00:00.000Z"
+    },
+    {
+      "id": "usr_mt335zacze3mq",
+      "name": "GOODLUCK ONYENSO",
+      "email": "onyensogoodluck28@gmail.com",
+      "password": "sweetlove24",
+      "phone": "08138434422",
+      "role": "customer",
+      "address": "Association street",
+      "createdAt": "2026-08-21T15:10:14.244Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod_1",
+      "name": "550W Monocrystalline Half-Cell Solar Panel",
+      "category": "solar",
+      "categoryLabel": "Solar & Inverters",
+      "price": 145000,
+      "originalPrice": 165000,
+      "rating": 4.9,
+      "reviewsCount": 42,
+      "badge": "Best Seller",
+      "inStock": true,
+      "stockCount": 35,
+      "image": "images/products/solar-panel-550w.jpg",
+      "fallbackImage": "images/solar-panel-550w.svg",
+      "description": "High-efficiency Tier 1 Monocrystalline A-Grade Solar Panel with 22.8% module efficiency. Anti-reflective glass, robust aluminum frame, ideal for residential and commercial rooftop solar installations in Nigeria.",
+      "specs": {
+        "Wattage": "550 Watts",
+        "Cell Type": "Monocrystalline Half-Cell",
+        "Efficiency": "22.8%",
+        "Warranty": "25-Year Linear Power Output",
+        "Voltage (Vmp)": "41.95V"
+      }
+    },
+    {
+      "id": "prod_2",
+      "name": "5kVA / 48V Pure Sine Wave Hybrid Solar Inverter",
+      "category": "solar",
+      "categoryLabel": "Solar & Inverters",
+      "price": 680000,
+      "originalPrice": 750000,
+      "rating": 5,
+      "reviewsCount": 38,
+      "badge": "Top Rated",
+      "inStock": true,
+      "stockCount": 14,
+      "image": "images/products/solar-inverter-5kva.jpg",
+      "fallbackImage": "images/solar-inverter-5kva.svg",
+      "description": "Smart Pure Sine Wave hybrid inverter with built-in 80A MPPT solar charge controller. Zero-switchover uninterrupted power supply for whole home, deep freezers, ACs, and office equipment.",
+      "specs": {
+        "Capacity": "5000VA / 5000W",
+        "DC Input": "48V DC",
+        "MPPT Range": "120V - 450V DC",
+        "Display": "Color LCD with Wi-Fi Monitor",
+        "Warranty": "2 Years Onsite Warranty"
+      }
+    },
+    {
+      "id": "prod_3",
+      "name": "200Ah / 12V Deep Cycle Tubular Gel Battery",
+      "category": "solar",
+      "categoryLabel": "Solar & Inverters",
+      "price": 285000,
+      "originalPrice": 320000,
+      "rating": 4.8,
+      "reviewsCount": 56,
+      "badge": "Popular",
+      "inStock": true,
+      "stockCount": 22,
+      "image": "images/products/tubular-battery-200ah.jpg",
+      "fallbackImage": "images/battery-tubular-200ah.svg",
+      "description": "Heavy-duty deep cycle solar tubular battery engineered for long cycle life (over 2,500 cycles at 50% DoD). Maintenance-free, high temperature resistant formulation.",
+      "specs": {
+        "Capacity": "200Ah (10Hr Rate)",
+        "Voltage": "12V Nominal",
+        "Technology": "Deep Cycle Tubular Gel",
+        "Design Life": "5+ Years",
+        "Weight": "62 kg"
+      }
+    },
+    {
+      "id": "prod_4",
+      "name": "60A MPPT Solar Charge Controller with LCD",
+      "category": "solar",
+      "categoryLabel": "Solar & Inverters",
+      "price": 85000,
+      "originalPrice": 98000,
+      "rating": 4.7,
+      "reviewsCount": 19,
+      "badge": "Hot",
+      "inStock": true,
+      "stockCount": 40,
+      "image": "images/products/mppt-controller.jpg",
+      "fallbackImage": "images/mppt-controller.svg",
+      "description": "Ultra-fast Maximum Power Point Tracking (MPPT) with tracking efficiency up to 99.5%. Supports 12V/24V/36V/48V auto-recognition with dual USB charging ports.",
+      "specs": {
+        "Rated Current": "60 Amperes",
+        "System Voltage": "12V / 24V / 36V / 48V Auto",
+        "Max PV Input": "150V DC",
+        "Efficiency": "Up to 99.5%"
+      }
+    },
+    {
+      "id": "prod_5",
+      "name": "300W All-In-One Solar Street / Flood Light",
+      "category": "solar",
+      "categoryLabel": "Solar & Inverters",
+      "price": 52000,
+      "originalPrice": 62000,
+      "rating": 4.9,
+      "reviewsCount": 67,
+      "badge": "Special Offer",
+      "inStock": true,
+      "stockCount": 50,
+      "image": "images/products/solar-floodlight.jpg",
+      "fallbackImage": "images/solar-floodlight.svg",
+      "description": "IP67 Waterproof high-lumen outdoor solar security floodlight with radar motion sensor and remote control. Built-in LiFePO4 battery providing up to 14 hours dusk-to-dawn lighting.",
+      "specs": {
+        "LED Power": "300W Equivalent (3500lm)",
+        "Battery": "LiFePO4 3.2V 30,000mAh",
+        "Waterproof": "IP67 Weatherproof",
+        "Control": "Radar Sensor + Remote"
+      }
+    },
+    {
+      "id": "prod_6",
+      "name": "16mm² 4-Core Armoured Copper Underground Cable (Per Meter)",
+      "category": "electrical",
+      "categoryLabel": "Electrical & Building",
+      "price": 14500,
+      "originalPrice": 16000,
+      "rating": 4.9,
+      "reviewsCount": 27,
+      "badge": "Contractor Choice",
+      "inStock": true,
+      "stockCount": 1500,
+      "image": "images/products/armoured-cable.jpg",
+      "fallbackImage": "images/armoured-cable.svg",
+      "description": "100% Pure Oxygen-Free Copper XLPE insulated steel wire armoured (SWA) multi-core cable. Premium Nigerian Standard Organization (SON) approved for residential and industrial power connections.",
+      "specs": {
+        "Size": "16mm² x 4 Core",
+        "Conductor": "100% Pure Annealed Copper",
+        "Armouring": "Galvanized Steel Wire (SWA)",
+        "Standard": "NIS / IEC 60502-1"
+      }
+    },
+    {
+      "id": "prod_7",
+      "name": "12-Way Double Door MCB Distribution Board (Flush / Surface)",
+      "category": "electrical",
+      "categoryLabel": "Electrical & Building",
+      "price": 38000,
+      "originalPrice": 45000,
+      "rating": 4.8,
+      "reviewsCount": 31,
+      "badge": "Building Essential",
+      "inStock": true,
+      "stockCount": 45,
+      "image": "images/products/distribution-board.jpg",
+      "fallbackImage": "images/distribution-board.svg",
+      "description": "High grade electro-galvanized sheet steel consumer unit with tinted polycarbonate door. Includes neutral link, copper busbar, and earth terminal block.",
+      "specs": {
+        "Ways": "12 Ways (TPN / SPN)",
+        "Material": "Heavy Gauge Coated Steel",
+        "Mounting": "Flush or Surface mount",
+        "Protection": "IP41 Rated"
+      }
+    },
+    {
+      "id": "prod_8",
+      "name": "Smart Wi-Fi 3-Gang Tempered Glass Touch Light Switch",
+      "category": "electrical",
+      "categoryLabel": "Electrical & Building",
+      "price": 16500,
+      "originalPrice": 21000,
+      "rating": 4.9,
+      "reviewsCount": 54,
+      "badge": "Smart Gadget",
+      "inStock": true,
+      "stockCount": 60,
+      "image": "images/products/smart-wifi-switch.jpg",
+      "fallbackImage": "images/smart-switch.svg",
+      "description": "Luxury crystal tempered glass touch switch with Tuya/Smart Life, Alexa & Google Home compatibility. Control your lights anywhere from your phone without rewiring.",
+      "specs": {
+        "Gangs": "3 Gangs 1-Way / 2-Way",
+        "Voltage": "90V - 250V AC",
+        "Connectivity": "Wi-Fi 2.4GHz + RF433",
+        "Surface": "Scratchproof Tempered Glass"
+      }
+    },
+    {
+      "id": "prod_9",
+      "name": "5000VA Digital Relay Voltage Stabilizer for Whole House",
+      "category": "electrical",
+      "categoryLabel": "Electrical & Building",
+      "price": 115000,
+      "originalPrice": 130000,
+      "rating": 4.8,
+      "reviewsCount": 40,
+      "badge": "Protection",
+      "inStock": true,
+      "stockCount": 18,
+      "image": "images/products/voltage-stabilizer.jpg",
+      "fallbackImage": "images/voltage-stabilizer.svg",
+      "description": "Heavy duty automatic voltage regulator (AVR) with wide input voltage range (95V - 270V). Protects your refrigerators, AC units, and electronics against surges and low voltages.",
+      "specs": {
+        "Power Rating": "5000VA (5kVA)",
+        "Input Range": "95V - 270V AC",
+        "Output": "220V ± 8%",
+        "Delay Timer": "3-Min Safety Time Delay"
+      }
+    },
+    {
+      "id": "prod_10",
+      "name": "50M Heavy Duty Industrial Cable Extension Reel with Thermal Cutout",
+      "category": "electrical",
+      "categoryLabel": "Electrical & Building",
+      "price": 42000,
+      "originalPrice": 48000,
+      "rating": 4.7,
+      "reviewsCount": 23,
+      "badge": "Workshop",
+      "inStock": true,
+      "stockCount": 25,
+      "image": "images/products/extension-cable-reel.jpg",
+      "fallbackImage": "images/extension-reel.svg",
+      "description": "Industrial grade 50-meter cable reel with 4 shuttered 13A sockets, sturdy steel frame, built-in thermal overload safety reset switch, and ergonomic winding handle.",
+      "specs": {
+        "Length": "50 Meters",
+        "Cable": "3-Core 1.5mm² Flexible Copper",
+        "Sockets": "4x 13A UK Universal Sockets",
+        "Safety": "Thermal Overload Cutout"
+      }
+    },
+    {
+      "id": "prod_11",
+      "name": "Modern Nordic 8-Ring Luxury LED Chandelier (Dimming & Remote)",
+      "category": "lighting",
+      "categoryLabel": "Lighting & Fixtures",
+      "price": 240000,
+      "originalPrice": 280000,
+      "rating": 5,
+      "reviewsCount": 33,
+      "badge": "Luxury Choice",
+      "inStock": true,
+      "stockCount": 10,
+      "image": "images/products/luxury-chandelier.jpg",
+      "fallbackImage": "images/luxury-chandelier.svg",
+      "description": "Stunning contemporary living room chandelier with 8 gold-finish interlocking rings. Features stepless 3-color dimming (Warm White, Natural, Cool White) via wireless remote.",
+      "specs": {
+        "Power": "120W High Lumen LED",
+        "Color Temp": "3000K - 6500K Stepless Dimming",
+        "Material": "Brushed Gold Aluminum & Crystal Acrylic",
+        "Diameter": "100cm Max Ring Width"
+      }
+    },
+    {
+      "id": "prod_12",
+      "name": "Magnetic Track Light Rail System 2M + 3 Spotlight Modules",
+      "category": "lighting",
+      "categoryLabel": "Lighting & Fixtures",
+      "price": 95000,
+      "originalPrice": 110000,
+      "rating": 4.9,
+      "reviewsCount": 29,
+      "badge": "Trending",
+      "inStock": true,
+      "stockCount": 20,
+      "image": "images/products/track-lighting-rail.jpg",
+      "fallbackImage": "images/track-light.svg",
+      "description": "Ultra-sleek modern recessed/surface magnetic rail lighting system. Magnetic snap-and-slide spotlights allow versatile architectural lighting in modern homes and boutiques.",
+      "specs": {
+        "Rail Length": "2 Meters Extruded Aluminum",
+        "Included Fixtures": "2x 12W Spotlights + 1x 18W Flood Diffuser",
+        "Voltage": "DC 48V Safe Low Voltage",
+        "CRI": ">90 Ra High Color Rendering"
+      }
+    },
+    {
+      "id": "prod_13",
+      "name": "Waterproof Outdoor Double-Sided Up & Down Wall Light",
+      "category": "lighting",
+      "categoryLabel": "Lighting & Fixtures",
+      "price": 14500,
+      "originalPrice": 18000,
+      "rating": 4.8,
+      "reviewsCount": 47,
+      "badge": "Popular",
+      "inStock": true,
+      "stockCount": 85,
+      "image": "images/products/wall-sconce-outdoor.jpg",
+      "fallbackImage": "images/wall-sconce.svg",
+      "description": "Architectural exterior wall sconce light fixture made of die-cast aluminum with IP65 weatherproofing. Casts elegant dual-beam ambient lighting on pillars and perimeter walls.",
+      "specs": {
+        "Power": "2x 6W COB LEDs (Warm White)",
+        "Material": "Die-cast Aluminum Alloy",
+        "Waterproof": "IP65 Outdoor Certified",
+        "Finish": "Matte Black Powder Coat"
+      }
+    },
+    {
+      "id": "prod_14",
+      "name": "Pack of 10 Rechargeable Emergency 15W LED Bulbs",
+      "category": "lighting",
+      "categoryLabel": "Lighting & Fixtures",
+      "price": 28000,
+      "originalPrice": 35000,
+      "rating": 4.9,
+      "reviewsCount": 82,
+      "badge": "Value Pack",
+      "inStock": true,
+      "stockCount": 65,
+      "image": "images/products/emergency-bulbs.jpg",
+      "fallbackImage": "images/products/emergency-bulbs.jpg",
+      "description": "Smart rechargeable emergency LED bulbs with standard B22 / E27 socket. Operates as regular energy-saving light bulb when power is on, and instantly stays lit for 4-5 hours during blackouts.",
+      "specs": {
+        "Quantity": "10 Bulbs Pack",
+        "Wattage": "15W (Replaces 100W Incandescent)",
+        "Battery": "Built-in 2200mAh Lithium Cell",
+        "Emergency Run Time": "4 to 5 Hours"
+      }
+    },
+    {
+      "id": "prod_15",
+      "name": "Luxury Tempered Glass Top Double-Burner Auto-Ignition Gas Cooker",
+      "category": "kitchen",
+      "categoryLabel": "Kitchen & Appliances",
+      "price": 48000,
+      "originalPrice": 58000,
+      "rating": 4.9,
+      "reviewsCount": 51,
+      "badge": "Best Seller",
+      "inStock": true,
+      "stockCount": 30,
+      "image": "images/products/gas-cooker-double.jpg",
+      "fallbackImage": "images/products/gas-cooker-double.jpg",
+      "description": "Sleek 8mm shatterproof tempered glass tabletop gas stove with whirlwind cast iron burner caps. Auto-piezo electronic ignition without matches, energy efficient blue flame technology.",
+      "specs": {
+        "Burners": "2 Brass Whirlwind Burners",
+        "Surface": "8mm Toughened Glass",
+        "Ignition": "Auto Piezo Electric (No Matches)",
+        "Safety": "Flame Failure Protection"
+      }
+    },
+    {
+      "id": "prod_16",
+      "name": "8.5L XXL Dual-Zone Digital Air Fryer with Touch Display",
+      "category": "kitchen",
+      "categoryLabel": "Kitchen & Appliances",
+      "price": 92000,
+      "originalPrice": 105000,
+      "rating": 4.9,
+      "reviewsCount": 44,
+      "badge": "Top Seller",
+      "inStock": true,
+      "stockCount": 24,
+      "image": "images/products/air-fryer.jpg",
+      "fallbackImage": "images/products/air-fryer.jpg",
+      "description": "Large capacity dual-basket air fryer allowing you to cook two distinct dishes simultaneously at independent temperatures. 360° rapid air circulation reduces oil by up to 85%.",
+      "specs": {
+        "Capacity": "8.5 Litres (Dual 4.25L Baskets)",
+        "Power": "2400W Rapid Heating",
+        "Presets": "10 One-Touch Smart Cooking Modes",
+        "Cleaning": "Non-stick Dishwasher-Safe Baskets"
+      }
+    },
+    {
+      "id": "prod_17",
+      "name": "Commercial 4500W Heavy Duty Blender & Food Processor (Unbreakable Jar)",
+      "category": "kitchen",
+      "categoryLabel": "Kitchen & Appliances",
+      "price": 36000,
+      "originalPrice": 44000,
+      "rating": 4.8,
+      "reviewsCount": 73,
+      "badge": "Hot Item",
+      "inStock": true,
+      "stockCount": 45,
+      "image": "images/products/commercial-blender.jpg",
+      "fallbackImage": "images/products/commercial-blender.jpg",
+      "description": "Heavy-duty commercial speed blender with pure copper motor, 6-leaf Japanese stainless steel blades, and 2.5L unbreakable polycarbonate jar. Easily crushes beans, tiger nuts, smoothies, and ice in seconds.",
+      "specs": {
+        "Motor Power": "4500W Pure Copper Core",
+        "Jar Capacity": "2.5 Litres Unbreakable Tritan Jar",
+        "Blades": "6-Wave Hardened Stainless Steel",
+        "Speed": "Stepless Variable Speed + Pulse"
+      }
+    },
+    {
+      "id": "prod_18",
+      "name": "12-Piece Non-Stick Granite Cookware Pot & Pan Set with Silicone Utensils",
+      "category": "kitchen",
+      "categoryLabel": "Kitchen & Appliances",
+      "price": 78000,
+      "originalPrice": 90000,
+      "rating": 4.9,
+      "reviewsCount": 39,
+      "badge": "Family Set",
+      "inStock": true,
+      "stockCount": 18,
+      "image": "images/products/cookware-set.jpg",
+      "fallbackImage": "images/products/cookware-set.jpg",
+      "description": "Premium 12-piece eco-friendly granite coating cookware set with heat-resistant silicone handles and induction bottoms. 100% PFOA and PTFE free non-stick surface.",
+      "specs": {
+        "Pieces": "12 Pieces (4 Casserole Pots, 1 Frying Pan + Utensils)",
+        "Coating": "5-Layer German Mineral Granite",
+        "Compatibility": "Gas, Induction, Electric, Ceramic",
+        "Lids": "Tempered Glass with Steam Vents"
+      }
+    },
+    {
+      "id": "prod_19",
+      "name": "12.5kg Standard Safe Camping & Home Gas Cylinder with Quality Valve",
+      "category": "gas",
+      "categoryLabel": "Cylinders & Gas Burners",
+      "price": 34000,
+      "originalPrice": 39000,
+      "rating": 4.9,
+      "reviewsCount": 88,
+      "badge": "High Demand",
+      "inStock": true,
+      "stockCount": 50,
+      "image": "images/products/gas-cylinder-12kg.jpg",
+      "fallbackImage": "images/products/gas-cylinder-12kg.jpg",
+      "description": "Standard 12.5kg liquefied petroleum gas (LPG) cylinder manufactured from high-tensile steel with anti-corrosion coating. Fully pressure tested and SON certified with high-precision brass safety valve.",
+      "specs": {
+        "Capacity": "12.5kg LPG Content",
+        "Material": "Heavy Gauge Cold Rolled Steel",
+        "Test Pressure": "34 Bar Hydraulic Tested",
+        "Certification": "SON / ISO 9001 Approved"
+      }
+    },
+    {
+      "id": "prod_20",
+      "name": "6kg Camping Gas Cylinder with Burner Head & Stand Plate",
+      "category": "gas",
+      "categoryLabel": "Cylinders & Gas Burners",
+      "price": 22000,
+      "originalPrice": 26000,
+      "rating": 4.8,
+      "reviewsCount": 64,
+      "badge": "Compact",
+      "inStock": true,
+      "stockCount": 42,
+      "image": "images/products/gas-cylinder-6kg.jpg",
+      "fallbackImage": "images/products/gas-cylinder-6kg.jpg",
+      "description": "Portable 6kg complete gas cooker unit with chrome-plated burner head and pot support ring. Ideal for students, singles, outdoor camping, and quick emergency boiling.",
+      "specs": {
+        "Capacity": "6kg LPG",
+        "Includes": "Cylinder + Cast Iron Burner Head + Support Grill",
+        "Portability": "Ergonomic Carrying Handle",
+        "Safety Valve": "Standard Brass Fitting"
+      }
+    },
+    {
+      "id": "prod_21",
+      "name": "High-Pressure Gas Regulator with Pressure Gauge + 2M Reinforced Hose & Clamps",
+      "category": "gas",
+      "categoryLabel": "Cylinders & Gas Burners",
+      "price": 12500,
+      "originalPrice": 16000,
+      "rating": 4.9,
+      "reviewsCount": 49,
+      "badge": "Safety Essential",
+      "inStock": true,
+      "stockCount": 75,
+      "image": "images/products/gas-regulator.jpg",
+      "fallbackImage": "images/products/gas-regulator.jpg",
+      "description": "Complete gas safety connection kit including an automatic gas leak shut-off regulator with visual pressure dial, 2-meter 3-layer steel wire reinforced gas hose, and 2 stainless steel tight grip clamps.",
+      "specs": {
+        "Features": "Visual Pressure Gauge + Auto Excess Flow Cut-off",
+        "Hose Length": "2 Meters 3-Layer Reinforced Rubber",
+        "Clamps": "2x 304 Stainless Steel Tightening Clamps",
+        "Standard": "EN 16129 European Standard"
+      }
+    },
+    {
+      "id": "prod_22",
+      "name": "Smart Wireless LPG Gas Leak Alarm & Safety Detector (Siren + Phone Alert)",
+      "category": "gas",
+      "categoryLabel": "Cylinders & Gas Burners",
+      "price": 18500,
+      "originalPrice": 23000,
+      "rating": 5,
+      "reviewsCount": 26,
+      "badge": "Life Saver",
+      "inStock": true,
+      "stockCount": 35,
+      "image": "images/products/gas-detector.jpg",
+      "fallbackImage": "images/products/gas-detector.jpg",
+      "description": "High-sensitivity catalytic gas sensor detecting Methane, Propane, and Butane leaks. Features an 85dB loud piercing alarm siren, flashing LED indicators, and instant Wi-Fi alerts to your smartphone.",
+      "specs": {
+        "Target Gases": "LPG, Natural Gas, Methane, Butane",
+        "Alarm Sound": ">85dB at 1 meter",
+        "Connectivity": "Wi-Fi App Notification + Audible Alarm",
+        "Power": "AC 110-240V Plug-in"
+      }
+    },
+    {
+      "id": "prod_23",
+      "name": "High-Back Ergonomic Executive Mesh Office Chair with Lumbar Support",
+      "category": "furniture",
+      "categoryLabel": "Furniture & Fittings",
+      "price": 110000,
+      "originalPrice": 130000,
+      "rating": 4.9,
+      "reviewsCount": 37,
+      "badge": "Comfort Pick",
+      "inStock": true,
+      "stockCount": 16,
+      "image": "images/products/office-chair.jpg",
+      "fallbackImage": "images/products/office-chair.jpg",
+      "description": "Premium breathable mesh ergonomic office chair with adjustable 3D armrests, dynamic lumbar support, tilt-lock mechanism (90°-135°), heavy-duty chrome star base, and smooth PU caster wheels.",
+      "specs": {
+        "Backrest": "Breathable Elastic High-Density Mesh",
+        "Gas Lift": "Class-4 Heavy-Duty SGS Certified Hydraulic",
+        "Weight Capacity": "Up to 160 kg",
+        "Base": "Solid Chrome Steel 5-Star Base"
+      }
+    },
+    {
+      "id": "prod_24",
+      "name": "Executive 1.6M L-Shaped Managerial Office Desk with Drawers & Cabinet",
+      "category": "furniture",
+      "categoryLabel": "Furniture & Fittings",
+      "price": 265000,
+      "originalPrice": 300000,
+      "rating": 4.8,
+      "reviewsCount": 18,
+      "badge": "Executive Suite",
+      "inStock": true,
+      "stockCount": 8,
+      "image": "images/products/executive-desk.jpg",
+      "fallbackImage": "images/products/executive-desk.jpg",
+      "description": "Sophisticated modern executive office workstation desk finished in walnut and royal navy accents. Features spacious L-shape return side cabinet, lockable security drawers, and integrated cable management pass-throughs.",
+      "specs": {
+        "Dimensions": "160cm (L) x 140cm (W) x 75cm (H)",
+        "Material": "E1 Grade Moisture-Resistant High-Density Melamine",
+        "Storage": "3-Tier Lockable Drawers + Open CPU Cabinet",
+        "Finish": "Walnut Grain & Deep Slate Gray"
+      }
+    },
+    {
+      "id": "prod_25",
+      "name": "Modern Floating TV Entertainment Console with LED Ambient Lights",
+      "category": "furniture",
+      "categoryLabel": "Furniture & Fittings",
+      "price": 145000,
+      "originalPrice": 170000,
+      "rating": 4.9,
+      "reviewsCount": 24,
+      "badge": "Living Room",
+      "inStock": true,
+      "stockCount": 12,
+      "image": "images/products/tv-console.jpg",
+      "fallbackImage": "images/products/tv-console.jpg",
+      "description": "Contemporary wall-mounted TV console media unit designed for televisions up to 75 inches. Includes flip-down acoustic cloth doors, hidden cable management channels, and integrated warm underglow LED lights.",
+      "specs": {
+        "Dimensions": "180cm (L) x 30cm (D) x 25cm (H)",
+        "Max TV Size": "Fits TVs up to 75 Inches",
+        "Features": "Underglow LED Strip + Soft-Close Hinges",
+        "Mounting": "Heavy-duty Solid Wall Expansion Anchors Included"
+      }
+    },
+    {
+      "id": "prod_26",
+      "name": "5-Tier Industrial Heavy-Duty Storage Rack & Shelving Unit (800kg Load)",
+      "category": "furniture",
+      "categoryLabel": "Furniture & Fittings",
+      "price": 68000,
+      "originalPrice": 80000,
+      "rating": 4.8,
+      "reviewsCount": 35,
+      "badge": "Storage",
+      "inStock": true,
+      "stockCount": 25,
+      "image": "images/products/storage-rack.jpg",
+      "fallbackImage": "images/products/storage-rack.jpg",
+      "description": "Boltless adjustable 5-tier heavy duty metal storage rack. Perfect for warehouse, garage, shop storage, or office archives. Powder-coated rustproof steel frame with reinforced moisture-resistant MDF decks.",
+      "specs": {
+        "Dimensions": "180cm (H) x 90cm (W) x 40cm (D)",
+        "Weight Capacity": "160 kg Per Shelf (800 kg Total)",
+        "Assembly": "100% Boltless Snap-Lock System",
+        "Finish": "Textured Black Powder Coat"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Categories",
+      "icon": "fa-th-large",
+      "count": 26
+    },
+    {
+      "id": "solar",
+      "name": "Solar & Inverters",
+      "icon": "fa-solar-panel",
+      "count": 5
+    },
+    {
+      "id": "electrical",
+      "name": "Electrical & Building",
+      "icon": "fa-bolt",
+      "count": 5
+    },
+    {
+      "id": "lighting",
+      "name": "Lighting & Fixtures",
+      "icon": "fa-lightbulb",
+      "count": 4
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen & Appliances",
+      "icon": "fa-blender",
+      "count": 4
+    },
+    {
+      "id": "gas",
+      "name": "Gas & Cylinders",
+      "icon": "fa-fire-flame-curved",
+      "count": 4
+    },
+    {
+      "id": "furniture",
+      "name": "Furniture & Office",
+      "icon": "fa-chair",
+      "count": 4
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-2026-6836",
+      "userId": "usr_demo_customer",
+      "customerName": "Adeola Johnson",
+      "customerEmail": "customer@onwaglow.com",
+      "customerPhone": "08137271212",
+      "deliveryAddress": "Kairo Street, Aseese, Ogun State",
+      "paymentMethod": "Bank Transfer",
+      "items": [
+        {
+          "id": "prod_1",
+          "name": "550W Solar Panel",
+          "price": 145000,
+          "quantity": 2
+        },
+        {
+          "id": "prod_15",
+          "name": "Glass Gas Cooker",
+          "price": 48000,
+          "quantity": 1
+        }
+      ],
+      "subtotal": 338000,
+      "discount": 33800,
+      "shipping": 5000,
+      "total": 309200,
+      "notes": "",
+      "status": "Dispatched",
+      "trackingStep": 3,
+      "createdAt": "2026-09-01T10:58:28.542Z"
+    },
+    {
+      "id": "ORD-2026-3091",
+      "userId": "usr_demo_customer",
+      "customerName": "Adeola Johnson",
+      "customerEmail": "customer@onwaglow.com",
+      "customerPhone": "08137271212",
+      "deliveryAddress": "Kairo Street, Aseese, Ogun State",
+      "paymentMethod": "Bank Transfer",
+      "items": [
+        {
+          "id": "prod_1",
+          "name": "550W Solar Panel",
+          "price": 145000,
+          "quantity": 2
+        },
+        {
+          "id": "prod_15",
+          "name": "Glass Gas Cooker",
+          "price": 48000,
+          "quantity": 1
+        }
+      ],
+      "subtotal": 338000,
+      "discount": 33800,
+      "shipping": 5000,
+      "total": 309200,
+      "notes": "",
+      "status": "Dispatched",
+      "trackingStep": 3,
+      "createdAt": "2026-08-21T18:42:13.791Z"
+    },
+    {
+      "id": "ORD-2026-1901",
+      "userId": "usr_demo_customer",
+      "customerName": "Adeola Johnson",
+      "customerEmail": "customer@onwaglow.com",
+      "customerPhone": "08137271212",
+      "deliveryAddress": "Kairo Street, Aseese, Ogun State",
+      "paymentMethod": "Bank Transfer",
+      "items": [
+        {
+          "id": "prod_1",
+          "name": "550W Solar Panel",
+          "price": 145000,
+          "quantity": 2
+        },
+        {
+          "id": "prod_15",
+          "name": "Glass Gas Cooker",
+          "price": 48000,
+          "quantity": 1
+        }
+      ],
+      "subtotal": 338000,
+      "discount": 33800,
+      "shipping": 5000,
+      "total": 309200,
+      "notes": "",
+      "status": "Dispatched",
+      "trackingStep": 3,
+      "createdAt": "2026-08-21T17:21:42.924Z"
+    },
+    {
+      "id": "ORD-2026-5306",
+      "userId": "usr_demo_customer",
+      "customerName": "Adeola Johnson",
+      "customerEmail": "customer@onwaglow.com",
+      "customerPhone": "08137271212",
+      "deliveryAddress": "Kairo Street, Aseese, Ogun State",
+      "paymentMethod": "Bank Transfer",
+      "items": [
+        {
+          "id": "prod_1",
+          "name": "550W Solar Panel",
+          "price": 145000,
+          "quantity": 2
+        },
+        {
+          "id": "prod_15",
+          "name": "Glass Gas Cooker",
+          "price": 48000,
+          "quantity": 1
+        }
+      ],
+      "subtotal": 338000,
+      "discount": 33800,
+      "shipping": 5000,
+      "total": 309200,
+      "notes": "",
+      "status": "Dispatched",
+      "trackingStep": 3,
+      "createdAt": "2026-08-21T15:34:30.201Z"
+    },
+    {
+      "id": "ORD-2026-2796",
+      "userId": "usr_demo_customer",
+      "customerName": "Adeola Johnson",
+      "customerEmail": "customer@onwaglow.com",
+      "customerPhone": "08137271212",
+      "deliveryAddress": "Kairo Street, Aseese, Ogun State",
+      "paymentMethod": "Bank Transfer",
+      "items": [
+        {
+          "id": "prod_1",
+          "name": "550W Solar Panel",
+          "price": 145000,
+          "quantity": 2
+        },
+        {
+          "id": "prod_15",
+          "name": "Glass Gas Cooker",
+          "price": 48000,
+          "quantity": 1
+        }
+      ],
+      "subtotal": 338000,
+      "discount": 33800,
+      "shipping": 5000,
+      "total": 309200,
+      "notes": "",
+      "status": "Dispatched",
+      "trackingStep": 3,
+      "createdAt": "2026-08-21T15:13:14.200Z"
+    },
+    {
+      "id": "ORD-2026-4671",
+      "userId": "usr_mt335zacze3mq",
+      "customerName": "GOODLUCK ONYENSO",
+      "customerEmail": "onyensogoodluck28@gmail.com",
+      "customerPhone": "08138434422",
+      "deliveryAddress": "Association street",
+      "paymentMethod": "Bank Transfer",
+      "items": [
+        {
+          "id": "prod_13",
+          "name": "Waterproof Outdoor Double-Sided Up & Down Wall Light",
+          "price": 14500,
+          "image": "images/products/wall-sconce-outdoor.jpg",
+          "quantity": 1
+        }
+      ],
+      "subtotal": 14500,
+      "discount": 0,
+      "shipping": 5000,
+      "total": 19500,
+      "notes": "MOWE",
+      "status": "Processing",
+      "trackingStep": 2,
+      "createdAt": "2026-08-21T15:12:46.715Z"
+    },
+    {
+      "id": "ORD-2026-8912",
+      "userId": "usr_demo_customer",
+      "customerName": "Adeola Johnson",
+      "customerEmail": "customer@onwaglow.com",
+      "customerPhone": "08137271212",
+      "deliveryAddress": "15 Platinum Estate, Aseese, Ogun State",
+      "paymentMethod": "Bank Transfer",
+      "items": [
+        {
+          "id": "prod_1",
+          "name": "550W Monocrystalline Half-Cell Solar Panel",
+          "price": 145000,
+          "quantity": 2,
+          "image": "images/products/solar-panel-550w.jpg"
+        },
+        {
+          "id": "prod_4",
+          "name": "60A MPPT Solar Charge Controller with LCD",
+          "price": 85000,
+          "quantity": 1,
+          "image": "images/products/mppt-controller.jpg"
+        }
+      ],
+      "subtotal": 375000,
+      "discount": 0,
+      "shipping": 5000,
+      "total": 380000,
+      "status": "Processing",
+      "trackingStep": 2,
+      "createdAt": "2026-08-20T14:30:00.000Z"
+    }
+  ],
+  "quotes": [
+    {
+      "id": "QUO-6713",
+      "name": "Engr. Dapo Williams",
+      "phone": "08137271212",
+      "email": "dapo@buildcorp.ng",
+      "projectType": "Armoured Power Supply Cables",
+      "location": "Aseese, Ogun State",
+      "details": "500 meters of 16mm 4-core copper cable",
+      "createdAt": "2026-09-01T10:58:28.556Z",
+      "status": "Pending Quote"
+    },
+    {
+      "id": "QUO-8718",
+      "name": "Engr. Dapo Williams",
+      "phone": "08137271212",
+      "email": "dapo@buildcorp.ng",
+      "projectType": "Armoured Power Supply Cables",
+      "location": "Aseese, Ogun State",
+      "details": "500 meters of 16mm 4-core copper cable",
+      "createdAt": "2026-08-21T18:42:13.804Z",
+      "status": "Pending Quote"
+    },
+    {
+      "id": "QUO-6835",
+      "name": "Engr. Dapo Williams",
+      "phone": "08137271212",
+      "email": "dapo@buildcorp.ng",
+      "projectType": "Armoured Power Supply Cables",
+      "location": "Aseese, Ogun State",
+      "details": "500 meters of 16mm 4-core copper cable",
+      "createdAt": "2026-08-21T17:21:42.933Z",
+      "status": "Pending Quote"
+    },
+    {
+      "id": "QUO-5486",
+      "name": "Eng. Fatia",
+      "phone": "08138434422",
+      "email": "onyensogoodluck28@gmail.com",
+      "projectType": "Complete House Conduit Wiring Materials",
+      "location": "Christ Embassy, Maba Ogun State",
+      "details": "give me full quotation in this resgards",
+      "createdAt": "2026-08-21T15:36:48.447Z",
+      "status": "Pending Quote"
+    },
+    {
+      "id": "QUO-8574",
+      "name": "Engr. Dapo Williams",
+      "phone": "08137271212",
+      "email": "dapo@buildcorp.ng",
+      "projectType": "Armoured Power Supply Cables",
+      "location": "Aseese, Ogun State",
+      "details": "500 meters of 16mm 4-core copper cable",
+      "createdAt": "2026-08-21T15:34:30.213Z",
+      "status": "Pending Quote"
+    },
+    {
+      "id": "QUO-1414",
+      "name": "Engr. Dapo Williams",
+      "phone": "08137271212",
+      "email": "dapo@buildcorp.ng",
+      "projectType": "Armoured Power Supply Cables",
+      "location": "Aseese, Ogun State",
+      "details": "500 meters of 16mm 4-core copper cable",
+      "createdAt": "2026-08-21T15:13:14.211Z",
+      "status": "Pending Quote"
+    },
+    {
+      "id": "QUO-7701",
+      "name": "Engr. Timothy Balogun",
+      "phone": "08034567890",
+      "email": "t.balogun@apexconstruct.ng",
+      "projectType": "Commercial 15kVA Solar & Electrical Wiring",
+      "location": "Aseese, Ogun State",
+      "details": "Requirement for 30 units of 550W panels, 15kVA 3-phase inverter, and 16mm armoured cables for new hotel project.",
+      "createdAt": "2026-08-21T09:15:00.000Z",
+      "status": "Pending Quote"
+    }
+  ],
+  "company": {
+    "name": "ONWAGLOW Enterprises",
+    "tagline": "Powering Homes, Lighting Ambitions & Furnishing Spaces",
+    "address": "Onwa Electronics, 4 Baale Palace, Ogun State, Nigeria",
+    "phones": [
+      "08137271212",
+      "08051996449",
+      "08066461430"
+    ],
+    "primaryPhone": "08137271212",
+    "technicalSupportPhone": "08137271212",
+    "email": "onwagloenterprise@gmail.com",
+    "currency": "₦",
+    "colors": {
+      "primaryOrange": "#FF6B00",
+      "primaryBlue": "#0B192C",
+      "accentBlue": "#1E3E62",
+      "electricBlue": "#0284C7"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="blBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="jarGlass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#BAE6FD" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#blBg)" rx="16" />
+  
+  <g transform="translate(150, 40)">
+    <!-- Base Shadow -->
+    <ellipse cx="100" cy="305" rx="80" ry="12" fill="#64748B" opacity="0.3" />
+
+    <!-- 2.5L Tritan Jar -->
+    <!-- Jar Lid (Rubber seal with measuring cap) -->
+    <path d="M 50 40 L 150 40 L 140 25 L 60 25 Z" fill="#0F172A" />
+    <rect x="85" y="12" width="30" height="15" rx="3" fill="#DC2626" />
+    <path d="M 90 0 L 110 0 L 105 12 L 95 12 Z" fill="#475569" /> <!-- Tamper stick tip -->
+
+    <!-- Transparent Pitcher Body -->
+    <polygon points="50,40 150,40 135,180 65,180" fill="url(#jarGlass)" stroke="#0284C7" stroke-width="2" />
+    
+    <!-- Measurement Scale markings on Jar -->
+    <line x1="60" y1="70" x2="75" y2="70" stroke="#0284C7" stroke-width="2" />
+    <text x="80" y="73" font-family="sans-serif" font-size="7" fill="#0284C7">2500ml</text>
+
+    <line x1="62" y1="100" x2="75" y2="100" stroke="#0284C7" stroke-width="2" />
+    <text x="80" y="103" font-family="sans-serif" font-size="7" fill="#0284C7">1750ml</text>
+
+    <line x1="65" y1="130" x2="75" y2="130" stroke="#0284C7" stroke-width="2" />
+    <text x="80" y="133" font-family="sans-serif" font-size="7" fill="#0284C7">1000ml</text>
+
+    <!-- 6-Leaf Stainless Steel Blades Base -->
+    <g transform="translate(100, 170)">
+      <polygon points="-20,-5 0,-15 20,-5 0,5" fill="#E2E8F0" stroke="#64748B" />
+      <circle cx="0" cy="0" r="6" fill="#F59E0B" />
+    </g>
+
+    <!-- Heavy-Duty Jar Handle -->
+    <path d="M 148 55 Q 185 80 180 140 Q 175 160 138 165" fill="none" stroke="#0F172A" stroke-width="12" stroke-linecap="round" />
+
+    <!-- 4500W Heavy Motor Base (Glossy Red / Black) -->
+    <path d="M 50 180 L 150 180 L 165 295 L 35 295 Z" fill="#DC2626" stroke="#991B1B" stroke-width="2" />
+    
+    <!-- Front Control Panel -->
+    <rect x="55" y="200" width="90" height="80" rx="8" fill="#0F172A" />
+    
+    <!-- Pulse Toggle (Left) -->
+    <circle cx="70" cy="225" r="7" fill="#475569" />
+    <text x="70" y="243" font-family="sans-serif" font-size="6" fill="#94A3B8" text-anchor="middle">PULSE</text>
+
+    <!-- Speed Dial (Center) -->
+    <circle cx="100" cy="225" r="14" fill="#E2E8F0" stroke="#64748B" stroke-width="2" />
+    <line x1="100" y1="225" x2="108" y2="218" stroke="#DC2626" stroke-width="3" />
+
+    <!-- On/Off Switch (Right) -->
+    <circle cx="130" cy="225" r="7" fill="#10B981" />
+    <text x="130" y="243" font-family="sans-serif" font-size="6" fill="#94A3B8" text-anchor="middle">POWER</text>
+
+    <text x="100" y="268" font-family="sans-serif" font-weight="900" font-size="9" fill="#FF8800" text-anchor="middle">4500W HEAVY DUTY</text>
+  </g>
+
+  <text x="250" y="370" font-family="sans-serif" font-weight="bold" font-size="13" fill="#0B192C" text-anchor="middle">4500W COMMERCIAL SPEED BLENDER</text>
+</svg>

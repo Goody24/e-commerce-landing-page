@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="gdBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <radialGradient id="alarmPulse" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EF4444" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#gdBg)" rx="16" />
+  
+  <!-- Red Warning Aura -->
+  <circle cx="250" cy="180" r="140" fill="url(#alarmPulse)" />
+
+  <g transform="translate(140, 60)">
+    <!-- Device Shadow -->
+    <rect x="8" y="10" width="220" height="230" rx="20" fill="#64748B" opacity="0.3" />
+    <!-- Main Smart Alarm Enclosure (Clean White & Slate) -->
+    <rect x="0" y="0" width="220" height="230" rx="20" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+    
+    <!-- Top Siren Speaker Grill -->
+    <g transform="translate(110, 60)">
+      <circle cx="0" cy="0" r="38" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2" />
+      <!-- Grill Holes -->
+      <circle cx="0" cy="0" r="6" fill="#0F172A" />
+      <circle cx="0" cy="-18" r="3" fill="#0F172A" />
+      <circle cx="0" cy="18" r="3" fill="#0F172A" />
+      <circle cx="-18" cy="0" r="3" fill="#0F172A" />
+      <circle cx="18" cy="0" r="3" fill="#0F172A" />
+      <circle cx="-12" cy="-12" r="3" fill="#0F172A" />
+      <circle cx="12" cy="-12" r="3" fill="#0F172A" />
+      <circle cx="-12" cy="12" r="3" fill="#0F172A" />
+      <circle cx="12" cy="12" r="3" fill="#0F172A" />
+    </g>
+
+    <!-- Digital Gas Concentration / Status Screen -->
+    <rect x="35" y="115" width="150" height="45" rx="6" fill="#0F172A" />
+    <text x="110" y="145" font-family="monospace" font-weight="900" font-size="20" fill="#22C55E" text-anchor="middle">0% LEL <tspan font-size="11" fill="#38BDF8">SAFE</tspan></text>
+
+    <!-- 3 Status LED Lights -->
+    <g transform="translate(45, 175)">
+      <!-- Power (Green) -->
+      <circle cx="15" cy="0" r="6" fill="#22C55E" />
+      <text x="15" y="18" font-family="sans-serif" font-size="7" fill="#64748B" text-anchor="middle">POWER</text>
+
+      <!-- State (Yellow) -->
+      <circle cx="65" cy="0" r="6" fill="#F59E0B" />
+      <text x="65" y="18" font-family="sans-serif" font-size="7" fill="#64748B" text-anchor="middle">STATE</text>
+
+      <!-- Alarm (Red) -->
+      <circle cx="115" cy="0" r="6" fill="#EF4444" />
+      <text x="115" y="18" font-family="sans-serif" font-size="7" fill="#64748B" text-anchor="middle">ALARM</text>
+    </g>
+
+    <!-- Test / Hush Button -->
+    <rect x="75" y="202" width="70" height="18" rx="6" fill="#FF6B00" />
+    <text x="110" y="214" font-family="sans-serif" font-weight="bold" font-size="8" fill="#FFF" text-anchor="middle">TEST / HUSH</text>
+  </g>
+
+  <text x="250" y="360" font-family="sans-serif" font-weight="bold" font-size="13" fill="#0B192C" text-anchor="middle">SMART WIRELESS LPG GAS LEAK DETECTOR ALARM</text>
+</svg>

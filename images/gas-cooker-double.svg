@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="gcBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="glassTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <radialGradient id="blueFlame" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="70%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#gcBg)" rx="16" />
+  
+  <g transform="translate(60, 90)">
+    <!-- Base Shadow -->
+    <rect x="10" y="15" width="360" height="200" rx="14" fill="#64748B" opacity="0.3" />
+    
+    <!-- Tempered Glass Tabletop Body -->
+    <rect x="0" y="0" width="360" height="190" rx="14" fill="url(#glassTop)" stroke="#475569" stroke-width="2" />
+    <rect x="6" y="6" width="348" height="178" rx="10" fill="none" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Modern Floral/Geometric Screenprint on Glass -->
+    <circle cx="180" cy="95" r="40" fill="none" stroke="#FF6B00" stroke-width="1" opacity="0.4" />
+
+    <!-- Left Burner -->
+    <g transform="translate(90, 75)">
+      <!-- Flame Glow -->
+      <circle cx="0" cy="0" r="45" fill="url(#blueFlame)" />
+      <!-- Cast Iron Pan Support (4 Prongs) -->
+      <line x1="-35" y1="0" x2="35" y2="0" stroke="#0F172A" stroke-width="6" stroke-linecap="round" />
+      <line x1="0" y1="-35" x2="0" y2="35" stroke="#0F172A" stroke-width="6" stroke-linecap="round" />
+      <line x1="-25" y1="-25" x2="25" y2="25" stroke="#0F172A" stroke-width="4" stroke-linecap="round" />
+      <line x1="-25" y1="25" x2="25" y2="-25" stroke="#0F172A" stroke-width="4" stroke-linecap="round" />
+      <!-- Brass Burner Cap -->
+      <circle cx="0" cy="0" r="18" fill="#F59E0B" stroke="#B45309" stroke-width="2" />
+      <circle cx="0" cy="0" r="8" fill="#78350F" />
+    </g>
+
+    <!-- Right Burner -->
+    <g transform="translate(270, 75)">
+      <!-- Flame Glow -->
+      <circle cx="0" cy="0" r="45" fill="url(#blueFlame)" />
+      <!-- Cast Iron Pan Support -->
+      <line x1="-35" y1="0" x2="35" y2="0" stroke="#0F172A" stroke-width="6" stroke-linecap="round" />
+      <line x1="0" y1="-35" x2="0" y2="35" stroke="#0F172A" stroke-width="6" stroke-linecap="round" />
+      <line x1="-25" y1="-25" x2="25" y2="25" stroke="#0F172A" stroke-width="4" stroke-linecap="round" />
+      <line x1="-25" y1="25" x2="25" y2="-25" stroke="#0F172A" stroke-width="4" stroke-linecap="round" />
+      <!-- Brass Burner Cap -->
+      <circle cx="0" cy="0" r="18" fill="#F59E0B" stroke="#B45309" stroke-width="2" />
+      <circle cx="0" cy="0" r="8" fill="#78350F" />
+    </g>
+
+    <!-- Front Control Knobs (Rotary Auto-Ignition) -->
+    <!-- Left Knob -->
+    <g transform="translate(90, 155)">
+      <circle cx="0" cy="0" r="16" fill="#475569" stroke="#94A3B8" stroke-width="2" />
+      <circle cx="0" cy="0" r="10" fill="#0F172A" />
+      <line x1="0" y1="-8" x2="0" y2="0" stroke="#FF6B00" stroke-width="2.5" />
+    </g>
+
+    <!-- Center ONWAGLOW Brand -->
+    <text x="180" y="160" font-family="sans-serif" font-weight="900" font-size="10" fill="#FF8800" text-anchor="middle" letter-spacing="1">ONWAGLOW</text>
+
+    <!-- Right Knob -->
+    <g transform="translate(270, 155)">
+      <circle cx="0" cy="0" r="16" fill="#475569" stroke="#94A3B8" stroke-width="2" />
+      <circle cx="0" cy="0" r="10" fill="#0F172A" />
+      <line x1="0" y1="-8" x2="0" y2="0" stroke="#FF6B00" stroke-width="2.5" />
+    </g>
+
+    <!-- 4 Heavy-Duty Rubber Base Feet -->
+    <rect x="15" y="190" width="30" height="12" rx="4" fill="#0F172A" />
+    <rect x="315" y="190" width="30" height="12" rx="4" fill="#0F172A" />
+  </g>
+
+  <text x="250" y="340" font-family="sans-serif" font-weight="bold" font-size="13" fill="#0B192C" text-anchor="middle">TEMPERED GLASS DOUBLE-BURNER GAS STOVE</text>
+</svg>

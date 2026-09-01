@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="tvBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <radialGradient id="underGlow" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#FF8800" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#FF6B00" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#FF6B00" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#tvBg)" rx="16" />
+  
+  <!-- Wall Mounted Big Screen TV Above -->
+  <g transform="translate(100, 30)">
+    <rect x="0" y="0" width="300" height="150" rx="8" fill="#020617" stroke="#334155" stroke-width="4" />
+    <rect x="8" y="8" width="284" height="134" rx="4" fill="#0B192C" />
+    
+    <!-- TV Screen Gradient / Vibrant Wallpaper -->
+    <text x="150" y="80" font-family="sans-serif" font-weight="900" font-size="20" fill="#38BDF8" text-anchor="middle">75" 4K CINEMA DISPLAY</text>
+  </g>
+
+  <!-- Underglow LED Lighting Aura -->
+  <polygon points="60,265 440,265 480,340 20,340" fill="url(#underGlow)" />
+
+  <!-- Floating Media Console Unit -->
+  <g transform="translate(60, 205)">
+    <!-- Console Body -->
+    <rect x="0" y="0" width="380" height="60" rx="6" fill="#1E293B" stroke="#475569" stroke-width="2" />
+    
+    <!-- Door 1 (Left Fluted Wood / Slate) -->
+    <rect x="8" y="8" width="115" height="44" rx="4" fill="#334155" stroke="#64748B" />
+    <line x1="20" y1="8" x2="20" y2="52" stroke="#475569" stroke-width="1.5" />
+    <line x1="35" y1="8" x2="35" y2="52" stroke="#475569" stroke-width="1.5" />
+    <line x1="50" y1="8" x2="50" y2="52" stroke="#475569" stroke-width="1.5" />
+
+    <!-- Center Open Media Compartment (Decoder / Soundbar space) -->
+    <rect x="131" y="8" width="118" height="44" rx="4" fill="#0B192C" />
+    <rect x="145" y="24" width="90" height="14" rx="2" fill="#020617" stroke="#38BDF8" stroke-width="1" />
+    <circle cx="155" cy="31" r="2" fill="#22C55E" />
+    <text x="180" y="34" font-family="monospace" font-size="7" fill="#38BDF8">4K DECODER</text>
+
+    <!-- Door 2 (Right) -->
+    <rect x="257" y="8" width="115" height="44" rx="4" fill="#334155" stroke="#64748B" />
+    <line x1="270" y1="8" x2="270" y2="52" stroke="#475569" stroke-width="1.5" />
+    <line x1="285" y1="8" x2="285" y2="52" stroke="#475569" stroke-width="1.5" />
+    <line x1="300" y1="8" x2="300" y2="52" stroke="#475569" stroke-width="1.5" />
+  </g>
+
+  <text x="250" y="375" font-family="sans-serif" font-weight="bold" font-size="13" fill="#F8FAFC" text-anchor="middle">MODERN FLOATING TV CONSOLE WITH AMBIENT LED</text>
+</svg>

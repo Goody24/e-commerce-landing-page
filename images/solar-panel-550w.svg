@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="solarBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="50%" stop-color="#0369A1" />
+      <stop offset="100%" stop-color="#075985" />
+    </linearGradient>
+    <linearGradient id="frameGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="sunRay" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#FF9F1C" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#bgGrad)" rx="16" />
+  
+  <!-- Subtle Sunlight Beam -->
+  <polygon points="0,0 300,0 450,400 0,400" fill="url(#sunRay)" />
+  
+  <!-- Solar Panel 3D Perspective Body -->
+  <g transform="translate(110, 40)">
+    <!-- Aluminum Outer Frame Shadow -->
+    <rect x="5" y="5" width="270" height="310" rx="8" fill="#64748B" opacity="0.4" />
+    <!-- Aluminum Outer Frame -->
+    <rect x="0" y="0" width="270" height="310" rx="8" fill="url(#frameGrad)" stroke="#CBD5E1" stroke-width="4" />
+    <!-- Solar Glass Grid Container -->
+    <rect x="12" y="12" width="246" height="286" fill="url(#solarBlue)" rx="4" />
+    
+    <!-- Half-Cut Solar Cells Matrix -->
+    <!-- Horizontal busbars -->
+    <line x1="12" y1="60" x2="258" y2="60" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.7" />
+    <line x1="12" y1="108" x2="258" y2="108" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.7" />
+    <line x1="12" y1="155" x2="258" y2="155" stroke="#FFFFFF" stroke-width="2.5" stroke-opacity="0.9" />
+    <line x1="12" y1="203" x2="258" y2="203" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.7" />
+    <line x1="12" y1="251" x2="258" y2="251" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.7" />
+
+    <!-- Vertical silver fingers -->
+    <line x1="53" y1="12" x2="53" y2="298" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.5" />
+    <line x1="94" y1="12" x2="94" y2="298" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.5" />
+    <line x1="135" y1="12" x2="135" y2="298" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.8" />
+    <line x1="176" y1="12" x2="176" y2="298" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.5" />
+    <line x1="217" y1="12" x2="217" y2="298" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.5" />
+
+    <!-- Anti-reflective Light Sheen -->
+    <polygon points="12,12 120,12 40,298 12,298" fill="#FFFFFF" opacity="0.15" />
+    
+    <!-- Tier-1 Monocrystalline Badge on Frame -->
+    <rect x="70" y="275" width="130" height="18" rx="4" fill="#0B192C" />
+    <text x="135" y="288" font-family="sans-serif" font-weight="bold" font-size="10" fill="#FF8800" text-anchor="middle">550W MONO HALF-CELL</text>
+  </g>
+  
+  <!-- Efficiency Badge -->
+  <g transform="translate(30, 40)">
+    <circle cx="35" cy="35" r="30" fill="#FF6B00" />
+    <text x="35" y="32" font-family="sans-serif" font-weight="900" font-size="13" fill="#FFFFFF" text-anchor="middle">22.8%</text>
+    <text x="35" y="46" font-family="sans-serif" font-weight="600" font-size="8" fill="#FFFFFF" text-anchor="middle">EFFICIENCY</text>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="trkBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <radialGradient id="spotCone" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#F59E0B" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#trkBg)" rx="16" />
+  
+  <!-- Ceiling Magnetic Rail -->
+  <g transform="translate(40, 50)">
+    <rect x="0" y="0" width="420" height="24" rx="4" fill="#0B192C" stroke="#334155" stroke-width="2" />
+    <line x1="20" y1="12" x2="400" y2="12" stroke="#D97706" stroke-width="3" />
+    
+    <!-- Light Beam 1 (Left Spot) -->
+    <polygon points="100,60 30,280 170,280" fill="url(#spotCone)" />
+    <!-- Light Beam 2 (Flood in middle) -->
+    <polygon points="210,40 130,280 290,280" fill="url(#spotCone)" />
+    <!-- Light Beam 3 (Right Spot) -->
+    <polygon points="320,60 250,280 390,280" fill="url(#spotCone)" />
+
+    <!-- Fixture 1: Cylindrical Spotlight Left -->
+    <g transform="translate(85, 20)">
+      <rect x="10" y="0" width="10" height="15" fill="#0F172A" />
+      <rect x="0" y="15" width="30" height="45" rx="6" fill="#1E293B" stroke="#0284C7" stroke-width="1.5" />
+      <ellipse cx="15" cy="60" rx="14" ry="4" fill="#FEF08A" />
+    </g>
+
+    <!-- Fixture 2: Linear Magnetic Diffuser Module (Center) -->
+    <g transform="translate(150, 15)">
+      <rect x="0" y="0" width="120" height="20" rx="3" fill="#0F172A" />
+      <rect x="5" y="8" width="110" height="12" rx="2" fill="#FEF08A" />
+    </g>
+
+    <!-- Fixture 3: Cylindrical Spotlight Right -->
+    <g transform="translate(305, 20)">
+      <rect x="10" y="0" width="10" height="15" fill="#0F172A" />
+      <rect x="0" y="15" width="30" height="45" rx="6" fill="#1E293B" stroke="#0284C7" stroke-width="1.5" />
+      <ellipse cx="15" cy="60" rx="14" ry="4" fill="#FEF08A" />
+    </g>
+  </g>
+
+  <text x="250" y="350" font-family="sans-serif" font-weight="bold" font-size="13" fill="#0B192C" text-anchor="middle">MAGNETIC RECESSED / SURFACE RAIL SYSTEM</text>
+</svg>

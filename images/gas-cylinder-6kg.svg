@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="c6Bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="c6Body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF6B00" />
+      <stop offset="30%" stop-color="#FF8800" />
+      <stop offset="70%" stop-color="#FF6B00" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#c6Bg)" rx="16" />
+  
+  <g transform="translate(180, 50)">
+    <!-- Base Shadow -->
+    <ellipse cx="70" cy="295" rx="65" ry="12" fill="#64748B" opacity="0.3" />
+
+    <!-- Top Burner Support Ring / Pan Stand (Cast Iron) -->
+    <ellipse cx="70" cy="50" rx="65" ry="18" fill="none" stroke="#0F172A" stroke-width="8" />
+    <line x1="15" y1="50" x2="125" y2="50" stroke="#0F172A" stroke-width="6" />
+    <line x1="70" y1="35" x2="70" y2="65" stroke="#0F172A" stroke-width="6" />
+    
+    <!-- Burner Head -->
+    <circle cx="70" cy="50" r="16" fill="#F59E0B" stroke="#B45309" stroke-width="2" />
+    
+    <!-- Stem Connecting to Cylinder -->
+    <rect x="62" y="65" width="16" height="30" fill="#94A3B8" />
+
+    <!-- Compact 6kg Cylinder Body (Orange) -->
+    <!-- Dome Top -->
+    <path d="M 15 130 Q 15 85 70 85 Q 125 85 125 130 Z" fill="url(#c6Body)" />
+    <!-- Center Tube -->
+    <rect x="15" y="130" width="110" height="90" fill="url(#c6Body)" />
+    <!-- Bottom Dome -->
+    <path d="M 15 220 Q 15 270 70 270 Q 125 270 125 220 Z" fill="url(#c6Body)" />
+    
+    <!-- Foot Stand Ring -->
+    <rect x="25" y="270" width="90" height="15" rx="4" fill="#0B192C" />
+
+    <!-- Center Label -->
+    <rect x="35" y="145" width="70" height="45" rx="6" fill="#0B192C" />
+    <text x="70" y="165" font-family="sans-serif" font-weight="900" font-size="11" fill="#FF8800" text-anchor="middle">ONWAGLOW</text>
+    <text x="70" y="182" font-family="sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" text-anchor="middle">6 KG</text>
+  </g>
+
+  <text x="250" y="370" font-family="sans-serif" font-weight="bold" font-size="13" fill="#0B192C" text-anchor="middle">6KG CAMPING GAS CYLINDER WITH BURNER HEAD</text>
+</svg>

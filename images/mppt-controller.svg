@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="mpptBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="heatsinkGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#mpptBg)" rx="16" />
+  
+  <g transform="translate(135, 50)">
+    <!-- Heatsink Fins Background -->
+    <rect x="-10" y="20" width="250" height="250" rx="10" fill="url(#heatsinkGrad)" />
+    
+    <!-- Heatsink Fin Lines -->
+    <line x1="-10" y1="50" x2="240" y2="50" stroke="#075985" stroke-width="3" />
+    <line x1="-10" y1="75" x2="240" y2="75" stroke="#075985" stroke-width="3" />
+    <line x1="-10" y1="100" x2="240" y2="100" stroke="#075985" stroke-width="3" />
+    <line x1="-10" y1="125" x2="240" y2="125" stroke="#075985" stroke-width="3" />
+    <line x1="-10" y1="150" x2="240" y2="150" stroke="#075985" stroke-width="3" />
+
+    <!-- Main Front Panel -->
+    <rect x="10" y="10" width="210" height="270" rx="12" fill="#0B192C" stroke="#FF6B00" stroke-width="2" />
+    
+    <!-- Header -->
+    <text x="115" y="40" font-family="sans-serif" font-weight="900" font-size="14" fill="#FF8800" text-anchor="middle">MPPT 60A</text>
+    <text x="115" y="55" font-family="sans-serif" font-weight="bold" font-size="9" fill="#38BDF8" text-anchor="middle">AUTO 12V/24V/36V/48V</text>
+
+    <!-- LCD Screen -->
+    <rect x="30" y="70" width="150" height="75" rx="6" fill="#1E293B" stroke="#475569" />
+    <text x="40" y="95" font-family="monospace" font-weight="bold" font-size="11" fill="#38BDF8">PV: 84.5V  28.4A</text>
+    <text x="40" y="115" font-family="monospace" font-weight="bold" font-size="11" fill="#10B981">BAT: 54.2V 99.2%</text>
+    <text x="40" y="133" font-family="monospace" font-size="9" fill="#F59E0B">LOAD: ON (350W)</text>
+
+    <!-- Dual USB Ports -->
+    <rect x="40" y="160" width="24" height="12" rx="2" fill="#334155" stroke="#94A3B8" />
+    <rect x="75" y="160" width="24" height="12" rx="2" fill="#334155" stroke="#94A3B8" />
+    <text x="140" y="170" font-family="sans-serif" font-size="9" fill="#94A3B8">Dual 5V USB</text>
+
+    <!-- 4 Navigation Buttons -->
+    <circle cx="50" cy="205" r="10" fill="#334155" stroke="#64748B" />
+    <circle cx="85" cy="205" r="10" fill="#334155" stroke="#64748B" />
+    <circle cx="120" cy="205" r="10" fill="#334155" stroke="#64748B" />
+    <circle cx="155" cy="205" r="10" fill="#FF6B00" />
+    <text x="155" y="209" font-family="sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">↵</text>
+
+    <!-- Connection Terminals (PV+, PV-, Bat+, Bat-, Load+, Load-) -->
+    <g transform="translate(25, 240)">
+      <rect x="0" y="0" width="20" height="25" rx="3" fill="#DC2626" />
+      <rect x="28" y="0" width="20" height="25" rx="3" fill="#1E293B" />
+      <rect x="56" y="0" width="20" height="25" rx="3" fill="#DC2626" />
+      <rect x="84" y="0" width="20" height="25" rx="3" fill="#1E293B" />
+      <rect x="112" y="0" width="20" height="25" rx="3" fill="#10B981" />
+      <rect x="140" y="0" width="20" height="25" rx="3" fill="#1E293B" />
+    </g>
+  </g>
+</svg>

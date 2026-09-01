@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="chBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="meshDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#chBg)" rx="16" />
+  
+  <g transform="translate(140, 30)">
+    <!-- Base Shadow -->
+    <ellipse cx="110" cy="340" rx="90" ry="14" fill="#64748B" opacity="0.3" />
+
+    <!-- Adjustable Headrest -->
+    <rect x="75" y="10" width="70" height="35" rx="12" fill="url(#meshDark)" stroke="#475569" stroke-width="2" />
+    <!-- Headrest Stem -->
+    <rect x="104" y="45" width="12" height="15" fill="#64748B" />
+
+    <!-- High-Back Ergonomic Mesh Backrest with Lumbar Curve -->
+    <path d="M 60 60 Q 50 140 65 190 L 155 190 Q 170 140 160 60 Z" fill="url(#meshDark)" stroke="#334155" stroke-width="2" />
+    <!-- Back Spine Frame (Chrome/Black) -->
+    <path d="M 50 80 Q 35 150 70 200 L 150 200 Q 185 150 170 80" fill="none" stroke="#94A3B8" stroke-width="4" />
+    
+    <!-- Lumbar Support Cushion -->
+    <rect x="75" y="140" width="70" height="25" rx="8" fill="#FF6B00" opacity="0.9" />
+    <text x="110" y="157" font-family="sans-serif" font-size="8" font-weight="bold" fill="#FFF" text-anchor="middle">LUMBAR</text>
+
+    <!-- Thick Molded Foam Seat Cushion -->
+    <rect x="40" y="200" width="140" height="35" rx="14" fill="url(#meshDark)" stroke="#475569" stroke-width="2" />
+
+    <!-- 3D Adjustable Armrests -->
+    <!-- Left Arm -->
+    <path d="M 35 170 L 35 220 L 50 220" fill="none" stroke="#64748B" stroke-width="6" />
+    <rect x="20" y="155" width="35" height="15" rx="6" fill="#0F172A" />
+
+    <!-- Right Arm -->
+    <path d="M 185 170 L 185 220 L 170 220" fill="none" stroke="#64748B" stroke-width="6" />
+    <rect x="165" y="155" width="35" height="15" rx="6" fill="#0F172A" />
+
+    <!-- Tilt Mechanism Box -->
+    <rect x="85" y="235" width="50" height="20" rx="4" fill="#0F172A" />
+    <line x1="75" y1="245" x2="85" y2="245" stroke="#94A3B8" stroke-width="4" /> <!-- Tilt Lever -->
+
+    <!-- Class-4 Heavy Duty Gas Lift Cylinder -->
+    <rect x="102" y="255" width="16" height="35" fill="#CBD5E1" stroke="#94A3B8" />
+
+    <!-- 5-Star Chrome Steel Base -->
+    <path d="M 110 290 L 30 325 M 110 290 L 70 335 M 110 290 L 110 340 M 110 290 L 150 335 M 110 290 L 190 325" stroke="#CBD5E1" stroke-width="8" stroke-linecap="round" />
+    
+    <!-- 5 PU Caster Wheels -->
+    <circle cx="30" cy="332" r="8" fill="#0F172A" />
+    <circle cx="70" cy="342" r="8" fill="#0F172A" />
+    <circle cx="110" cy="347" r="8" fill="#0F172A" />
+    <circle cx="150" cy="342" r="8" fill="#0F172A" />
+    <circle cx="190" cy="332" r="8" fill="#0F172A" />
+  </g>
+
+  <text x="250" y="380" font-family="sans-serif" font-weight="bold" font-size="13" fill="#0B192C" text-anchor="middle">HIGH-BACK ERGONOMIC EXECUTIVE MESH CHAIR</text>
+</svg>

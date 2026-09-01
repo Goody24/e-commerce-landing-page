@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="rkBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="shelfMdf" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#rkBg)" rx="16" />
+  
+  <g transform="translate(130, 40)">
+    <!-- Base Shadow -->
+    <ellipse cx="120" cy="325" rx="110" ry="12" fill="#64748B" opacity="0.3" />
+
+    <!-- 4 Black Steel Uprights with Keyhole Slots -->
+    <!-- Front-Left Upright -->
+    <rect x="20" y="20" width="14" height="300" rx="3" fill="#0F172A" />
+    <!-- Front-Right Upright -->
+    <rect x="206" y="20" width="14" height="300" rx="3" fill="#0F172A" />
+    <!-- Rear-Left Upright -->
+    <rect x="45" y="10" width="12" height="300" rx="3" fill="#334155" />
+    <!-- Rear-Right Upright -->
+    <rect x="183" y="10" width="12" height="300" rx="3" fill="#334155" />
+
+    <!-- 5 Shelves (Tier 1 to 5) -->
+    <!-- Shelf 1 (Top) -->
+    <g transform="translate(20, 25)">
+      <polygon points="0,15 25,-5 175,-5 200,15" fill="url(#shelfMdf)" stroke="#92400E" />
+      <rect x="0" y="15" width="200" height="10" fill="#0F172A" />
+    </g>
+
+    <!-- Shelf 2 -->
+    <g transform="translate(20, 85)">
+      <polygon points="0,15 25,-5 175,-5 200,15" fill="url(#shelfMdf)" stroke="#92400E" />
+      <rect x="0" y="15" width="200" height="10" fill="#0F172A" />
+      <!-- Sample Boxes on Shelf 2 -->
+      <rect x="40" y="-15" width="35" height="25" rx="2" fill="#0284C7" />
+      <rect x="85" y="-20" width="45" height="30" rx="2" fill="#FF6B00" />
+    </g>
+
+    <!-- Shelf 3 (Middle) -->
+    <g transform="translate(20, 150)">
+      <polygon points="0,15 25,-5 175,-5 200,15" fill="url(#shelfMdf)" stroke="#92400E" />
+      <rect x="0" y="15" width="200" height="10" fill="#0F172A" />
+    </g>
+
+    <!-- Shelf 4 -->
+    <g transform="translate(20, 215)">
+      <polygon points="0,15 25,-5 175,-5 200,15" fill="url(#shelfMdf)" stroke="#92400E" />
+      <rect x="0" y="15" width="200" height="10" fill="#0F172A" />
+      <rect x="60" y="-25" width="50" height="35" rx="2" fill="#10B981" />
+    </g>
+
+    <!-- Shelf 5 (Bottom) -->
+    <g transform="translate(20, 280)">
+      <polygon points="0,15 25,-5 175,-5 200,15" fill="url(#shelfMdf)" stroke="#92400E" />
+      <rect x="0" y="15" width="200" height="10" fill="#0F172A" />
+    </g>
+  </g>
+
+  <!-- Heavy Duty 800KG Badge -->
+  <g transform="translate(40, 50)">
+    <circle cx="35" cy="35" r="30" fill="#FF6B00" />
+    <text x="35" y="32" font-family="sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" text-anchor="middle">800KG</text>
+    <text x="35" y="46" font-family="sans-serif" font-weight="bold" font-size="8" fill="#FFFFFF" text-anchor="middle">MAX LOAD</text>
+  </g>
+
+  <text x="250" y="380" font-family="sans-serif" font-weight="bold" font-size="13" fill="#0B192C" text-anchor="middle">5-TIER BOLTLESS HEAVY DUTY STORAGE RACK</text>
+</svg>

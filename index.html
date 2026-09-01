@@ -3,38 +3,1326 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple E-Commerce</title>
-  <link href="style.css" rel="stylesheet">
-
+  <title>ONWAGLOW Enterprises | Solar, Electrical, Kitchen, Gas & Furniture Store</title>
+  <meta name="description" content="ONWAGLOW Enterprises - Leading supplier of Solar Panels, Inverters, Electrical Building Materials, Kitchen Appliances, Gas Cylinders, Luxury Lighting and Office Furniture in Ogun State & Nigeria.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <header>Simple E-Commerce Store</header>
 
-  <!-- Product Section -->
-  <div class="container" id="product-list"></div>
-
-  <!-- Cart Section -->
-  <div class="cart">
-    <h2>Your Cart</h2>
-    <ul class="cart-items" id="cart-items"></ul>
-    <p class="cart-total">Total: $<span id="total">0</span></p>
-    <button class="clear-cart" onclick="clearCart()">Clear Cart</button>
-    <button class="checkout-btn" onclick="openCheckout()">Checkout</button>
-    <div class="confirmation" id="confirmation">Thank you for your order!</div>
-  </div>
-
-  <!-- Checkout Modal -->
-  <div class="checkout-modal" id="checkout-modal">
-    <div class="checkout-form">
-      <h3>Checkout</h3>
-      <input type="text" id="customer-name" placeholder="Full Name" required>
-      <input type="email" id="customer-email" placeholder="Email" required>
-      <input type="text" id="customer-address" placeholder="Address" required>
-      <button onclick="submitOrder()">Submit Order</button>
-      <button class="close-btn" onclick="closeCheckout()">Cancel</button>
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <div class="announcement-left">
+        <span><i class="fa-solid fa-bolt text-orange"></i> <strong>ONWAGLOW Enterprises</strong> - Nationwide Delivery | Showroom at 4 Baale Palace, Ogun State</span>
+      </div>
+      <div class="announcement-right">
+        <a href="tel:08137271212" class="top-contact"><i class="fa-solid fa-headset text-orange"></i> 0813 727 1212 (Technical &amp; Sizing)</a>
+        <a href="tel:08051996449" class="top-contact hide-mobile"><i class="fa-solid fa-phone"></i> 0805 199 6449</a>
+        <a href="tel:08066461430" class="top-contact hide-mobile"><i class="fa-solid fa-phone"></i> 0806 646 1430</a>
+        <a href="mailto:onwagloenterprise@gmail.com" class="top-contact"><i class="fa-solid fa-envelope"></i> onwagloenterprise@gmail.com</a>
+      </div>
     </div>
   </div>
-    
+
+  <!-- Header Navigation -->
+  <header class="main-header" id="main-header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" id="brand-logo-btn">
+        <img src="images/logo.svg" alt="ONWAGLOW Enterprises Logo" class="header-logo-img">
+      </a>
+
+      <!-- Search Bar with Live Filter -->
+      <div class="header-search">
+        <div class="search-category-select">
+          <select id="search-category-select">
+            <option value="all">All Categories</option>
+            <option value="solar">Solar & Inverters</option>
+            <option value="electrical">Electrical & Building</option>
+            <option value="lighting">Lighting & Fixtures</option>
+            <option value="kitchen">Kitchen & Appliances</option>
+            <option value="gas">Gas & Cylinders</option>
+            <option value="furniture">Furniture & Office</option>
+          </select>
+          <i class="fa-solid fa-chevron-down select-arrow"></i>
+        </div>
+        <div class="search-input-wrap">
+          <input type="text" id="global-search-input" placeholder="Search solar panels, inverters, cables, cookers, furniture..." autocomplete="off">
+          <button id="search-btn" class="search-btn" aria-label="Search" onclick="triggerGlobalSearch()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Action Navigation Buttons -->
+      <div class="header-actions">
+        <!-- Auth / User Account Button -->
+        <div class="user-account-dropdown-wrap" id="user-dropdown-wrap">
+          <button class="action-btn" id="auth-modal-btn">
+            <i class="fa-regular fa-user"></i>
+            <div class="action-btn-text">
+              <span class="sub-label" id="user-greeting">Welcome</span>
+              <span class="main-label" id="user-account-label">Sign In / Register</span>
+            </div>
+          </button>
+          
+          <!-- Dropdown Menu for Logged-in Users -->
+          <div class="user-dropdown-menu" id="user-dropdown-menu">
+            <div class="dropdown-user-info" id="dropdown-user-info">
+              <strong id="dropdown-user-name">User Name</strong>
+              <small id="dropdown-user-email">email@example.com</small>
+              <span class="user-role-badge" id="dropdown-user-role">Customer</span>
+            </div>
+            <hr>
+            <button class="dropdown-item" id="open-my-orders-btn">
+              <i class="fa-solid fa-box-open"></i> My Orders &amp; Tracking
+            </button>
+            <button class="dropdown-item" id="open-profile-btn">
+              <i class="fa-solid fa-id-card"></i> Account Profile
+            </button>
+            <button class="dropdown-item admin-only-item" id="open-admin-btn" style="display: none;">
+              <i class="fa-solid fa-shield-halved text-orange"></i> Admin Dashboard
+            </button>
+            <hr>
+            <button class="dropdown-item logout-btn" id="logout-btn">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+            </button>
+          </div>
+        </div>
+
+        <!-- Wishlist Button -->
+        <button class="action-btn" id="open-wishlist-btn" title="View Wishlist">
+          <div class="icon-badge-wrap">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge" id="wishlist-count">0</span>
+          </div>
+          <div class="action-btn-text hide-tablet">
+            <span class="sub-label">Saved</span>
+            <span class="main-label">Wishlist</span>
+          </div>
+        </button>
+
+        <!-- Cart Drawer Trigger Button -->
+        <button class="action-btn cart-action-btn" id="open-cart-btn" title="Open Shopping Cart">
+          <div class="icon-badge-wrap">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge" id="cart-count">0</span>
+          </div>
+          <div class="action-btn-text hide-tablet">
+            <span class="sub-label">Your Cart</span>
+            <span class="main-label" id="header-cart-total">₦0</span>
+          </div>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Category Mega-Bar Navigation -->
+    <nav class="category-nav-bar" id="category-nav-bar">
+      <div class="container nav-inner">
+        <ul class="nav-links">
+          <li class="active" data-nav-category="all"><a href="#products-section" onclick="filterByCategory('all')"><i class="fa-solid fa-boxes-stacked"></i> All Products</a></li>
+          <li data-nav-category="solar"><a href="#products-section" onclick="filterByCategory('solar')"><i class="fa-solid fa-solar-panel"></i> Solar &amp; Inverters</a></li>
+          <li data-nav-category="electrical"><a href="#products-section" onclick="filterByCategory('electrical')"><i class="fa-solid fa-bolt"></i> Electrical &amp; Building</a></li>
+          <li data-nav-category="lighting"><a href="#products-section" onclick="filterByCategory('lighting')"><i class="fa-solid fa-lightbulb"></i> Lighting &amp; Chandeliers</a></li>
+          <li data-nav-category="kitchen"><a href="#products-section" onclick="filterByCategory('kitchen')"><i class="fa-solid fa-kitchen-set"></i> Kitchen Items</a></li>
+          <li data-nav-category="gas"><a href="#products-section" onclick="filterByCategory('gas')"><i class="fa-solid fa-fire-flame-curved"></i> Gas &amp; Cylinders</a></li>
+          <li data-nav-category="furniture"><a href="#products-section" onclick="filterByCategory('furniture')"><i class="fa-solid fa-chair"></i> Furniture &amp; Fittings</a></li>
+        </ul>
+        <div class="nav-special-links">
+          <a href="#solar-calculator-section" class="solar-calc-link"><i class="fa-solid fa-calculator text-orange"></i> Solar Load Estimator</a>
+          <button id="open-rfq-btn" class="rfq-nav-btn"><i class="fa-solid fa-file-invoice"></i> Bulk Quote RFQ</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <img src="images/logo.svg" alt="ONWAGLOW" class="mobile-logo-img">
+      <button id="close-mobile-drawer-btn" class="close-drawer-btn">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <div class="mobile-auth-section" id="mobile-auth-section">
+        <!-- populated dynamically -->
+      </div>
+      <ul class="mobile-category-links">
+        <li class="mobile-cat-item" data-category="all"><i class="fa-solid fa-th-large"></i> All Products</li>
+        <li class="mobile-cat-item" data-category="solar"><i class="fa-solid fa-solar-panel"></i> Solar Panels &amp; Inverters</li>
+        <li class="mobile-cat-item" data-category="electrical"><i class="fa-solid fa-bolt"></i> Electrical &amp; Building Materials</li>
+        <li class="mobile-cat-item" data-category="lighting"><i class="fa-solid fa-lightbulb"></i> Luxury Lights &amp; Chandeliers</li>
+        <li class="mobile-cat-item" data-category="kitchen"><i class="fa-solid fa-kitchen-set"></i> Kitchen Appliances</li>
+        <li class="mobile-cat-item" data-category="gas"><i class="fa-solid fa-fire-flame-curved"></i> Gas Cylinders &amp; Cookers</li>
+        <li class="mobile-cat-item" data-category="furniture"><i class="fa-solid fa-chair"></i> Home &amp; Office Furniture</li>
+      </ul>
+      <div class="mobile-contact-info">
+        <p><i class="fa-solid fa-phone"></i> <strong>Hotline:</strong> 0813 727 1212 | 0805 199 6449</p>
+        <p><i class="fa-solid fa-headset text-orange"></i> <strong>Technical Support &amp; Sizing:</strong> 0813 843 4422</p>
+        <p><i class="fa-solid fa-phone"></i> <strong>Support:</strong> 0806 646 1430</p>
+        <p><i class="fa-solid fa-envelope"></i> onwagloenterprise@gmail.com</p>
+        <a href="https://wa.me/2348137271212?text=Hello%20ONWAGLOW%20Enterprises,%20I%20would%20like%20to%20make%20an%20inquiry" target="_blank" class="btn-whatsapp-full"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- Hero Banner Slider -->
+  <section class="hero-section">
+    <div class="hero-slider" id="hero-slider">
+      
+      <!-- Slide 1: Solar & Inverter -->
+      <div class="hero-slide active" style="background: linear-gradient(135deg, rgba(11,25,44,0.92) 0%, rgba(30,62,98,0.85) 100%), url('images/solar-panel-550w.svg') center/cover;">
+        <div class="container hero-content">
+          <div class="hero-text-wrap">
+            <span class="hero-badge"><i class="fa-solid fa-sun text-orange"></i> ZERO BLACKOUT SOLUTIONS</span>
+            <h1 class="hero-title">High-Efficiency <span class="text-orange">Solar Systems</span> &amp; Hybrid Inverters</h1>
+            <p class="hero-description">Say goodbye to grid failures with Tier-1 550W Half-Cell Monocrystalline Solar Panels, Pure Sine Wave Inverters, and Tubular Gel Deep-Cycle Batteries.</p>
+            <div class="hero-cta-group">
+              <button class="btn btn-primary" onclick="filterByCategory('solar')"><i class="fa-solid fa-solar-panel"></i> Shop Solar Solutions</button>
+              <a href="#solar-calculator-section" class="btn btn-outline"><i class="fa-solid fa-calculator"></i> Calculate Solar Size</a>
+            </div>
+            <div class="hero-highlights">
+              <div class="highlight-item"><i class="fa-solid fa-shield-check text-green"></i> 25-Year Panel Warranty</div>
+              <div class="highlight-item"><i class="fa-solid fa-truck-fast text-orange"></i> Nationwide Delivery</div>
+              <div class="highlight-item"><i class="fa-solid fa-wrench text-blue"></i> Expert Installation</div>
+            </div>
+          </div>
+          <div class="hero-featured-card hide-mobile">
+            <div class="glass-card">
+              <span class="card-tag">Hot Deal</span>
+              <img src="images/products/solar-inverter-5kva.jpg" alt="5kVA Hybrid Inverter" class="hero-card-img">
+              <h4>5kVA 48V Pure Sine Wave Inverter</h4>
+              <div class="card-price-row">
+                <span class="price">₦680,000</span>
+                <span class="orig-price">₦750,000</span>
+              </div>
+              <button class="btn btn-sm btn-primary w-100" onclick="quickAddToCart('prod_2')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Electrical Materials & Lighting -->
+      <div class="hero-slide" style="background: linear-gradient(135deg, rgba(11,25,44,0.92) 0%, rgba(30,62,98,0.85) 100%), url('images/products/luxury-chandelier.jpg') center/cover;">
+        <div class="container hero-content">
+          <div class="hero-text-wrap">
+            <span class="hero-badge"><i class="fa-solid fa-lightbulb text-orange"></i> ARCHITECTURAL LIGHTING &amp; WIRING</span>
+            <h1 class="hero-title">Pure Copper <span class="text-orange">Building Cables</span> &amp; Modern Chandeliers</h1>
+            <p class="hero-description">Premium SON-certified armoured cables, smart Wi-Fi switches, distribution boards, and luxury multi-ring LED chandeliers for modern architectural projects.</p>
+            <div class="hero-cta-group">
+              <button class="btn btn-primary" onclick="filterByCategory('electrical')"><i class="fa-solid fa-bolt"></i> Shop Electricals</button>
+              <button class="btn btn-secondary" onclick="filterByCategory('lighting')"><i class="fa-solid fa-lightbulb"></i> View Chandeliers</button>
+            </div>
+          </div>
+          <div class="hero-featured-card hide-mobile">
+            <div class="glass-card">
+              <span class="card-tag">Luxury Pick</span>
+              <img src="images/products/luxury-chandelier.jpg" alt="Chandelier" class="hero-card-img">
+              <h4>8-Ring Stepless Dimmable Chandelier</h4>
+              <div class="card-price-row">
+                <span class="price">₦240,000</span>
+                <span class="orig-price">₦280,000</span>
+              </div>
+              <button class="btn btn-sm btn-primary w-100" onclick="quickAddToCart('prod_11')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Kitchen & Gas Cylinders & Furniture -->
+      <div class="hero-slide" style="background: linear-gradient(135deg, rgba(11,25,44,0.92) 0%, rgba(30,62,98,0.85) 100%), url('images/gas-cooker-double.svg') center/cover;">
+        <div class="container hero-content">
+          <div class="hero-text-wrap">
+            <span class="hero-badge"><i class="fa-solid fa-fire-flame-curved text-orange"></i> KITCHEN, GAS &amp; OFFICE LIVING</span>
+            <h1 class="hero-title">Safe <span class="text-orange">Gas Cylinders</span>, Cookers &amp; Executive Furniture</h1>
+            <p class="hero-description">Heavy-duty 12.5kg/6kg pressure-tested gas cylinders, auto-ignition glass cookers, 4500W blenders, and high-back ergonomic mesh office chairs.</p>
+            <div class="hero-cta-group">
+              <button class="btn btn-primary" onclick="filterByCategory('kitchen')"><i class="fa-solid fa-kitchen-set"></i> Kitchen &amp; Gas</button>
+              <button class="btn btn-outline" onclick="filterByCategory('furniture')"><i class="fa-solid fa-chair"></i> Explore Furniture</button>
+            </div>
+          </div>
+          <div class="hero-featured-card hide-mobile">
+            <div class="glass-card">
+              <span class="card-tag">Best Seller</span>
+              <img src="images/gas-cooker-double.svg" alt="Gas Cooker" class="hero-card-img">
+              <h4>Tempered Glass Double Gas Stove</h4>
+              <div class="card-price-row">
+                <span class="price">₦48,000</span>
+                <span class="orig-price">₦58,000</span>
+              </div>
+              <button class="btn btn-sm btn-primary w-100" onclick="quickAddToCart('prod_15')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Slider Navigation Arrows and Dots -->
+    <button class="slider-arrow prev" id="slider-prev-btn" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="slider-arrow next" id="slider-next-btn" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="slider-dots" id="slider-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+  </section>
+
+  <!-- Trust Value Props Strip -->
+  <section class="trust-strip">
+    <div class="container trust-container">
+      <div class="trust-card">
+        <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="trust-text">
+          <h4>100% Genuine Products</h4>
+          <p>Direct from verified manufacturers &amp; SON approved</p>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon"><i class="fa-solid fa-solar-panel"></i></div>
+        <div class="trust-text">
+          <h4>Certified Solar Engineers</h4>
+          <p>Professional sizing, load audits &amp; installation</p>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <div class="trust-text">
+          <h4>Swift Delivery</h4>
+          <p>Aseese, Ogun State, Lagos &amp; nationwide transit</p>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon"><i class="fa-solid fa-headset"></i></div>
+        <div class="trust-text">
+          <h4>24/7 Technical Support</h4>
+          <p>Call or WhatsApp direct technical assistance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Showcase Grid -->
+  <section class="section categories-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-subtitle">EXPLORE BY SPECIALIZATION</span>
+          <h2 class="section-title">Shop by Category</h2>
+        </div>
+        <a href="#products-section" class="view-all-link">Browse Full Catalog <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="categories-grid">
+        
+        <div class="category-card" onclick="filterByCategory('solar')">
+          <div class="cat-img-box">
+            <img src="images/products/solar-panel-550w.jpg" alt="Solar Panels & Inverters">
+          </div>
+          <div class="cat-info">
+            <h3>Solar Panels &amp; Inverters</h3>
+            <p>Monocrystalline Panels, MPPTs &amp; Gel Batteries</p>
+            <span class="cat-count">5+ Models <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="filterByCategory('electrical')">
+          <div class="cat-img-box">
+            <img src="images/products/armoured-cable.jpg" alt="Electrical Building Materials">
+          </div>
+          <div class="cat-info">
+            <h3>Electrical &amp; Building</h3>
+            <p>Armoured Cables, DBs, Stabilizers &amp; Switches</p>
+            <span class="cat-count">5+ Models <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="filterByCategory('lighting')">
+          <div class="cat-img-box">
+            <img src="images/products/luxury-chandelier.jpg" alt="Lighting & Chandeliers">
+          </div>
+          <div class="cat-info">
+            <h3>Lighting &amp; Fixtures</h3>
+            <p>Luxury Chandeliers, Magnetic Tracks &amp; Floodlights</p>
+            <span class="cat-count">4+ Models <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="filterByCategory('kitchen')">
+          <div class="cat-img-box">
+            <img src="images/air-fryer.svg" alt="Kitchen Appliances">
+          </div>
+          <div class="cat-info">
+            <h3>Kitchen &amp; Appliances</h3>
+            <p>Air Fryers, Commercial Blenders &amp; Cookware</p>
+            <span class="cat-count">4+ Models <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="filterByCategory('gas')">
+          <div class="cat-img-box">
+            <img src="images/gas-cylinder-12kg.svg" alt="Gas Cylinders & Burners">
+          </div>
+          <div class="cat-info">
+            <h3>Gas Cylinders &amp; Burners</h3>
+            <p>12.5kg/6kg Cylinders, Regulators &amp; Alarms</p>
+            <span class="cat-count">4+ Models <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="category-card" onclick="filterByCategory('furniture')">
+          <div class="cat-img-box">
+            <img src="images/office-chair.svg" alt="Furniture & Fittings">
+          </div>
+          <div class="cat-info">
+            <h3>Home &amp; Office Furniture</h3>
+            <p>Ergonomic Chairs, Executive Desks &amp; Shelving</p>
+            <span class="cat-count">4+ Models <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Solar Load Estimator Tool -->
+  <section class="section solar-calculator-section" id="solar-calculator-section">
+    <div class="container">
+      <div class="solar-calc-container">
+        
+        <div class="calc-left">
+          <span class="section-subtitle text-orange"><i class="fa-solid fa-bolt"></i> SMART SIZING TOOL</span>
+          <h2 class="calc-title">Interactive Solar Power Load Calculator</h2>
+          <p class="calc-desc">Select the appliances you plan to run to calculate the exact Solar Inverter size, Battery storage capacity, and Solar Panels recommended for your home or office.</p>
+          
+          <div class="appliance-picker-grid">
+            
+            <div class="appliance-item">
+              <div class="appliance-info">
+                <i class="fa-solid fa-lightbulb"></i>
+                <div>
+                  <strong>LED Light Bulbs</strong>
+                  <small>15W each</small>
+                </div>
+              </div>
+              <div class="qty-counter">
+                <button type="button" onclick="adjustAppliance('bulbs', -1)">-</button>
+                <span id="qty-bulbs">6</span>
+                <button type="button" onclick="adjustAppliance('bulbs', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="appliance-item">
+              <div class="appliance-info">
+                <i class="fa-solid fa-fan"></i>
+                <div>
+                  <strong>Ceiling / Standing Fans</strong>
+                  <small>75W each</small>
+                </div>
+              </div>
+              <div class="qty-counter">
+                <button type="button" onclick="adjustAppliance('fans', -1)">-</button>
+                <span id="qty-fans">3</span>
+                <button type="button" onclick="adjustAppliance('fans', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="appliance-item">
+              <div class="appliance-info">
+                <i class="fa-solid fa-tv"></i>
+                <div>
+                  <strong>Smart TVs &amp; Decoders</strong>
+                  <small>120W each</small>
+                </div>
+              </div>
+              <div class="qty-counter">
+                <button type="button" onclick="adjustAppliance('tvs', -1)">-</button>
+                <span id="qty-tvs">2</span>
+                <button type="button" onclick="adjustAppliance('tvs', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="appliance-item">
+              <div class="appliance-info">
+                <i class="fa-solid fa-laptop"></i>
+                <div>
+                  <strong>Laptops &amp; Wi-Fi Routers</strong>
+                  <small>80W each</small>
+                </div>
+              </div>
+              <div class="qty-counter">
+                <button type="button" onclick="adjustAppliance('laptops', -1)">-</button>
+                <span id="qty-laptops">2</span>
+                <button type="button" onclick="adjustAppliance('laptops', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="appliance-item">
+              <div class="appliance-info">
+                <i class="fa-solid fa-snowflake"></i>
+                <div>
+                  <strong>Inverter Refrigerator / Freezer</strong>
+                  <small>250W each</small>
+                </div>
+              </div>
+              <div class="qty-counter">
+                <button type="button" onclick="adjustAppliance('fridges', -1)">-</button>
+                <span id="qty-fridges">1</span>
+                <button type="button" onclick="adjustAppliance('fridges', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="appliance-item">
+              <div class="appliance-info">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                  <strong>Inverter 1.5HP Air Conditioner</strong>
+                  <small>1200W each</small>
+                </div>
+              </div>
+              <div class="qty-counter">
+                <button type="button" onclick="adjustAppliance('acs', -1)">-</button>
+                <span id="qty-acs">0</span>
+                <button type="button" onclick="adjustAppliance('acs', 1)">+</button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="backup-hours-picker">
+            <label for="backup-hours-slider">Desired Battery Backup Time during Blackouts: <strong id="backup-hours-val" class="text-orange">8 Hours</strong></label>
+            <input type="range" id="backup-hours-slider" min="4" max="24" step="2" value="8" oninput="updateBackupHours(this.value)">
+          </div>
+        </div>
+
+        <!-- Calculated Recommended System Box -->
+        <div class="calc-right">
+          <div class="recommendation-card">
+            <h3>Recommended Solar Package</h3>
+            
+            <div class="load-metric-bar">
+              <div class="metric">
+                <span class="m-label">Total Running Load</span>
+                <strong class="m-val" id="total-load-watts">735 Watts</strong>
+              </div>
+              <div class="metric">
+                <span class="m-label">Required Energy / Day</span>
+                <strong class="m-val" id="total-daily-kwh">5.88 kWh</strong>
+              </div>
+            </div>
+
+            <div class="spec-breakdown-list">
+              
+              <div class="spec-row">
+                <div class="spec-icon"><i class="fa-solid fa-microchip"></i></div>
+                <div class="spec-text">
+                  <small>Recommended Inverter</small>
+                  <strong id="rec-inverter">3.5kVA / 24V Pure Sine Wave</strong>
+                </div>
+              </div>
+
+              <div class="spec-row">
+                <div class="spec-icon"><i class="fa-solid fa-battery-full"></i></div>
+                <div class="spec-text">
+                  <small>Recommended Battery Bank</small>
+                  <strong id="rec-battery">2x 200Ah / 12V Tubular Gel Batteries</strong>
+                </div>
+              </div>
+
+              <div class="spec-row">
+                <div class="spec-icon"><i class="fa-solid fa-solar-panel"></i></div>
+                <div class="spec-text">
+                  <small>Recommended Solar Panels</small>
+                  <strong id="rec-panels">4x 550W Monocrystalline Panels</strong>
+                </div>
+              </div>
+
+              <div class="spec-row">
+                <div class="spec-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <div class="spec-text">
+                  <small>Charge Controller</small>
+                  <strong id="rec-controller">60A MPPT Smart Controller</strong>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="rec-actions">
+              <button class="btn btn-primary w-100" onclick="addSolarBundleToCart()"><i class="fa-solid fa-cart-shopping"></i> Add Recommended System to Cart</button>
+              <button class="btn btn-whatsapp-full w-100 mt-2" onclick="orderSolarViaWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Chat Engineer on WhatsApp</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Product Catalog Section -->
+  <section class="section products-section" id="products-section">
+    <div class="container">
+      
+      <div class="catalog-header-bar">
+        <div>
+          <span class="section-subtitle">CURRENT INVENTORY &amp; SPECIALS</span>
+          <h2 class="section-title">Featured Products Catalog</h2>
+        </div>
+
+        <!-- Sort and View Filter -->
+        <div class="catalog-controls">
+          <div class="sort-select-wrap">
+            <label for="catalog-sort">Sort By:</label>
+            <select id="catalog-sort" onchange="applySorting(this.value)">
+              <option value="featured">Featured &amp; Best Sellers</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="name">Product Name (A - Z)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs-wrap">
+        <button class="tab-btn active" data-tab="all" onclick="filterByCategory('all')">All Products (<span id="count-all">26</span>)</button>
+        <button class="tab-btn" data-tab="solar" onclick="filterByCategory('solar')"><i class="fa-solid fa-solar-panel"></i> Solar &amp; Inverters</button>
+        <button class="tab-btn" data-tab="electrical" onclick="filterByCategory('electrical')"><i class="fa-solid fa-bolt"></i> Electrical &amp; Building</button>
+        <button class="tab-btn" data-tab="lighting" onclick="filterByCategory('lighting')"><i class="fa-solid fa-lightbulb"></i> Lighting &amp; Fixtures</button>
+        <button class="tab-btn" data-tab="kitchen" onclick="filterByCategory('kitchen')"><i class="fa-solid fa-kitchen-set"></i> Kitchen &amp; Appliances</button>
+        <button class="tab-btn" data-tab="gas" onclick="filterByCategory('gas')"><i class="fa-solid fa-fire-flame-curved"></i> Gas &amp; Cylinders</button>
+        <button class="tab-btn" data-tab="furniture" onclick="filterByCategory('furniture')"><i class="fa-solid fa-chair"></i> Furniture &amp; Fittings</button>
+      </div>
+
+      <!-- Active Filter Badge Strip (if filtered) -->
+      <div class="active-filter-status" id="active-filter-status" style="display: none;">
+        <span>Showing results for: <strong id="filter-status-text">Category</strong></span>
+        <button class="clear-filter-btn" onclick="clearFilters()"><i class="fa-solid fa-xmark"></i> Clear Filters</button>
+      </div>
+
+      <!-- Product Grid Container -->
+      <div class="products-grid" id="products-grid">
+        <!-- Injected Dynamically by JavaScript -->
+        <div class="loading-spinner-wrap">
+          <div class="spinner"></div>
+          <p>Loading ONWAGLOW verified products...</p>
+        </div>
+      </div>
+
+      <!-- Empty State Container -->
+      <div class="empty-products" id="empty-products" style="display: none;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h3>No matching products found</h3>
+        <p>Try checking your spelling or adjusting your category filter.</p>
+        <button class="btn btn-primary" onclick="clearFilters()">Reset All Filters</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contractor Wholesale & Building RFQ Banner -->
+  <section class="section rfq-banner-section">
+    <div class="container">
+      <div class="rfq-banner-card">
+        <div class="rfq-banner-content">
+          <span class="rfq-tag">CONTRACTOR &amp; BUILDER SERVICES</span>
+          <h2>Building a House or Executing an Electrical Project?</h2>
+          <p>We supply full electrical building materials (armoured cables, conduit pipes, DB boxes, switches), solar power backup packages, and complete office furniture fittings at direct wholesale contractor prices.</p>
+          <div class="rfq-features">
+            <span><i class="fa-solid fa-circle-check text-orange"></i> Bulk Volume Discounts</span>
+            <span><i class="fa-solid fa-circle-check text-orange"></i> Material Schedule Estimation</span>
+            <span><i class="fa-solid fa-circle-check text-orange"></i> On-Site Delivery in Ogun/Lagos</span>
+          </div>
+          <button class="btn btn-primary btn-lg" onclick="openRFQModal()"><i class="fa-solid fa-file-signature"></i> Request Contractor Bulk Quote</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showroom, Map & Contact Section -->
+  <section class="section contact-showroom-section" id="showroom-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">VISIT OUR PHYSICAL STORE</span>
+        <h2 class="section-title">Showroom Location &amp; Contact Direct Lines</h2>
+        <p class="section-desc">Experience our lighting fixtures, inspect solar inverters, and pick up electrical supplies directly from our physical showroom.</p>
+      </div>
+
+      <div class="showroom-grid">
+        
+        <!-- Address & Contact Info Card -->
+        <div class="showroom-info-card">
+          <div class="info-block">
+            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4>Showroom Address</h4>
+              <p><strong>Onwa Electronics, 4 Baale Palace, Ogun State, Nigeria</strong></p>
+              <small class="text-muted">Easily accessible with ample parking &amp; on-site technical inspection</small>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <div>
+              <h4>Direct Telephone Numbers</h4>
+              <div class="phone-links-list">
+                <a href="tel:08137271212" class="phone-link" style="color: var(--primary-orange); font-weight: 800;"><i class="fa-solid fa-headset"></i> 0813 727 1212 (Technical Support &amp; Solar Sizing)</a>
+                <a href="tel:08051996449" class="phone-link"><i class="fa-solid fa-phone"></i> 0805 199 6449 (Sales &amp; Contractor RFQ)</a>
+                <a href="tel:08066461430" class="phone-link"><i class="fa-solid fa-phone"></i> 0806 646 1430 (Customer Care &amp; General Inquiries)</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <div>
+              <h4>Email Inquiries</h4>
+              <a href="mailto:onwagloenterprise@gmail.com" class="email-link">onwagloenterprise@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h4>Operating Working Hours</h4>
+              <p>Monday – Saturday: <strong>8:00 AM – 6:30 PM</strong></p>
+              <p>Sunday: <strong>12:00 PM – 5:00 PM</strong></p>
+            </div>
+          </div>
+
+          <div class="whatsapp-direct-banner">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <strong>Instant WhatsApp Support</strong>
+              <p>Send photos of required electrical parts or solar inquiries.</p>
+            </div>
+            <a href="https://wa.me/2348137271212?text=Hello%20ONWAGLOW%20Enterprises,%20I%20have%20an%20inquiry" target="_blank" class="btn btn-whatsapp-sm">Chat Now</a>
+          </div>
+        </div>
+
+        <!-- Interactive Map / Location Preview Card -->
+        <div class="showroom-map-card">
+          <div class="map-card-header">
+            <h4><i class="fa-solid fa-map-location-dot text-orange"></i> 4 Baale Palace Showroom Direction Map</h4>
+            <span class="badge-open"><i class="fa-solid fa-circle text-green"></i> Open Now</span>
+          </div>
+          <div class="map-visual" style="padding: 0; overflow: hidden; position: relative;">
+            <iframe 
+              src="https://maps.google.com/maps?q=4%20Baale%20Palace,%20Ogun%20State,%20Nigeria&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="260" 
+              style="border:0; display:block;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="map-card-footer">
+            <p><i class="fa-solid fa-route text-orange"></i> <strong>4 Baale Palace, Ogun State, Nigeria</strong></p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=4+Baale+Palace+Ogun+State+Nigeria" target="_blank" class="btn btn-primary btn-sm"><i class="fa-solid fa-location-arrow"></i> Get Live GPS Directions</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials & Verified Reviews -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">WHAT CLIENTS SAY</span>
+        <h2 class="section-title">Trusted by Homeowners &amp; Contractors</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"We bought 8 units of the 550W Mono panels and a 5kVA Inverter for our residence in Aseese. Their engineers delivered on the same day and our inverter has been running our deep freezer, TVs and lighting without a glitch."</p>
+          <div class="reviewer">
+            <div class="avatar">EB</div>
+            <div>
+              <strong>Engr. Babatunde O.</strong>
+              <small>Homeowner, Aseese, Ogun State</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"As an electrical contractor, sourcing 100% pure copper armoured cables is always a priority. ONWAGLOW provided certified SON cables and 12-way DB boards at great wholesale rates. Will always patronize!"</p>
+          <div class="reviewer">
+            <div class="avatar">KA</div>
+            <div>
+              <strong>Kazeem Adebayo</strong>
+              <small>Lead Electrical Contractor, Lagos</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"The 8-ring luxury chandelier transformed my living room completely. The double burner glass gas cooker and 12.5kg cylinder are solid quality with genuine safety valves. Great customer service!"</p>
+          <div class="reviewer">
+            <div class="avatar">CO</div>
+            <div>
+              <strong>Mrs. Chioma Okonkwo</strong>
+              <small>Verified Buyer, Ogun State</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">GOT QUESTIONS?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-accordion">
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Where is ONWAGLOW Enterprises physically located?</span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Our main showroom and warehouse is located at <strong>Onwa Electronics, 4 Baale Palace, Ogun State, Nigeria</strong>. You are welcome to inspect products in person, consult with our solar engineers, or arrange local pick-up.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you offer delivery across Ogun State and other states?</span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! We offer swift same-day / next-day delivery across Aseese, Ibafo, Mowe, Magboro, Berger, Ikeja, and all across Ogun State and Lagos State. We also dispatch nationwide via verified logistics partners.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do your solar panels and inverters come with warranties?</span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Our Tier-1 Monocrystalline Solar Panels carry a <strong>25-year linear power warranty</strong>, and our Pure Sine Wave Inverters and Tubular Batteries carry comprehensive manufacturer replacement &amp; repair warranties.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I order directly via WhatsApp or Phone call?</span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! You can place orders directly through our website checkout, or click our WhatsApp buttons to send your cart breakdown directly to our sales line at <strong>08137271212</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Summary -->
+        <div class="footer-col brand-col">
+          <img src="images/logo.svg" alt="ONWAGLOW Enterprises" class="footer-logo-img">
+          <p class="footer-desc">Your trusted one-stop supplier for High-Yield Solar Power Systems, Certified Electrical Building Materials, Luxury Lighting Fixtures, Safe Gas Cylinders &amp; Cookers, and Executive Office Furniture.</p>
+          <div class="footer-social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/2348137271212" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Product Categories</h4>
+          <ul class="footer-links">
+            <li><a href="#products-section" onclick="filterByCategory('solar')">Solar Panels &amp; Inverters</a></li>
+            <li><a href="#products-section" onclick="filterByCategory('electrical')">Electrical &amp; Armoured Cables</a></li>
+            <li><a href="#products-section" onclick="filterByCategory('lighting')">LED Chandeliers &amp; Lights</a></li>
+            <li><a href="#products-section" onclick="filterByCategory('kitchen')">Kitchen Cookers &amp; Blenders</a></li>
+            <li><a href="#products-section" onclick="filterByCategory('gas')">12.5kg &amp; 6kg Gas Cylinders</a></li>
+            <li><a href="#products-section" onclick="filterByCategory('furniture')">Office Desks &amp; Ergonomic Chairs</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Tools & Support -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="#solar-calculator-section">Solar Load Estimator</a></li>
+            <li><a href="#" onclick="openRFQModal()">Request Bulk Contractor Quote</a></li>
+            <li><a href="#" onclick="openUserOrdersModal()">Track Your Order Status</a></li>
+            <li><a href="#" onclick="openAuthModal('login')">Account Login &amp; Register</a></li>
+            <li><a href="#showroom-section">Showroom Directions</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Summary -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact Showroom</h4>
+          <p class="footer-contact-item"><i class="fa-solid fa-location-dot text-orange"></i> Onwa Electronics, 4 Baale Palace, Ogun State</p>
+          <p class="footer-contact-item"><i class="fa-solid fa-headset text-orange"></i> <a href="tel:08137271212">0813 727 1212 (Technical &amp; Sizing)</a></p>
+          <p class="footer-contact-item"><i class="fa-solid fa-phone text-orange"></i> <a href="tel:08051996449">0805 199 6449 (Sales &amp; RFQ)</a></p>
+          <p class="footer-contact-item"><i class="fa-solid fa-phone text-orange"></i> <a href="tel:08066461430">0806 646 1430 (Customer Care)</a></p>
+          <p class="footer-contact-item"><i class="fa-solid fa-envelope text-orange"></i> <a href="mailto:onwagloenterprise@gmail.com">onwagloenterprise@gmail.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 <strong>ONWAGLOW Enterprises</strong>. All Rights Reserved. RC Registered.</p>
+        <p class="designer-credit">⚡ Powering Homes, Lighting Ambitions &amp; Furnishing Spaces</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       MODALS & DRAWERS
+  ============================================================ -->
+
+  <!-- 1. AUTHENTICATION MODAL (Sign In / Register / Demo 1-Click) -->
+  <div class="modal-backdrop" id="auth-modal">
+    <div class="modal-dialog auth-dialog">
+      <button class="modal-close-btn" onclick="closeAuthModal()">&times;</button>
+      
+      <div class="auth-modal-header">
+        <img src="images/logo.svg" alt="ONWAGLOW" class="auth-logo">
+        <h3 id="auth-modal-title">Welcome to ONWAGLOW</h3>
+        <p id="auth-modal-subtitle">Sign in to track your orders, save cart items &amp; checkout faster</p>
+      </div>
+
+      <!-- Demo Quick Login Buttons Bar -->
+      <div class="demo-login-box">
+        <small class="demo-badge">🚀 Instant Demo Logins:</small>
+        <div class="demo-btn-group">
+          <button type="button" class="btn-demo-quick" onclick="quickFillDemo('customer')">
+            <i class="fa-solid fa-user"></i> Demo Customer
+          </button>
+          <button type="button" class="btn-demo-quick btn-demo-admin" onclick="quickFillDemo('admin')">
+            <i class="fa-solid fa-shield-halved"></i> Demo Admin
+          </button>
+        </div>
+      </div>
+
+      <!-- Auth Tabs Switcher -->
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="tab-login-btn" onclick="switchAuthTab('login')">Sign In</button>
+        <button class="auth-tab-btn" id="tab-register-btn" onclick="switchAuthTab('register')">Create Account</button>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="login-form" class="auth-form" onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label for="login-email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+          <input type="email" id="login-email" required placeholder="customer@onwaglow.com">
+        </div>
+        <div class="form-group">
+          <label for="login-password"><i class="fa-solid fa-lock"></i> Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-primary w-100 btn-auth" id="btn-login-submit">
+          <span>Sign In to Account</span> <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="register-form" class="auth-form" style="display: none;" onsubmit="handleRegisterSubmit(event)">
+        <div class="form-group">
+          <label for="reg-name"><i class="fa-solid fa-user"></i> Full Name</label>
+          <input type="text" id="reg-name" required placeholder="e.g. Adeola Johnson">
+        </div>
+        <div class="form-group">
+          <label for="reg-email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+          <input type="email" id="reg-email" required placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="reg-phone"><i class="fa-solid fa-phone"></i> Phone Number</label>
+          <input type="tel" id="reg-phone" required placeholder="08137271212">
+        </div>
+        <div class="form-group">
+          <label for="reg-password"><i class="fa-solid fa-lock"></i> Create Password</label>
+          <input type="password" id="reg-password" required placeholder="At least 6 characters">
+        </div>
+        <div class="form-group">
+          <label for="reg-address"><i class="fa-solid fa-location-dot"></i> Delivery Address (Optional)</label>
+          <input type="text" id="reg-address" placeholder="e.g. 15 Platinum Estate, Aseese, Ogun State">
+        </div>
+        <button type="submit" class="btn btn-primary w-100 btn-auth" id="btn-register-submit">
+          <span>Create My Account</span> <i class="fa-solid fa-user-plus"></i>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- 2. USER ACCOUNT & ORDERS MODAL -->
+  <div class="modal-backdrop" id="user-orders-modal">
+    <div class="modal-dialog user-orders-dialog">
+      <button class="modal-close-btn" onclick="closeUserOrdersModal()">&times;</button>
+      
+      <div class="orders-modal-header">
+        <div class="user-avatar-large"><i class="fa-solid fa-user"></i></div>
+        <div>
+          <h3 id="modal-profile-name">Customer Account</h3>
+          <p id="modal-profile-email">email@example.com</p>
+          <span class="badge-role" id="modal-profile-role">Verified Customer</span>
+        </div>
+      </div>
+
+      <div class="user-orders-body">
+        <h4><i class="fa-solid fa-clock-rotate-left text-orange"></i> Your Order History &amp; Real-Time Tracking</h4>
+        
+        <div class="orders-list-container" id="user-orders-list">
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. ADMIN DASHBOARD MODAL -->
+  <div class="modal-backdrop" id="admin-modal">
+    <div class="modal-dialog admin-dialog">
+      <button class="modal-close-btn" onclick="closeAdminModal()">&times;</button>
+      
+      <div class="admin-modal-header">
+        <div>
+          <h3><i class="fa-solid fa-shield-halved text-orange"></i> ONWAGLOW Admin Dashboard</h3>
+          <p>Store Order Management &amp; Inquiries</p>
+        </div>
+        <span class="admin-badge">Administrator Access</span>
+      </div>
+
+      <div class="admin-stats-row">
+        <div class="stat-card">
+          <small>Total Orders</small>
+          <strong id="admin-total-orders">0</strong>
+        </div>
+        <div class="stat-card">
+          <small>Total Revenue</small>
+          <strong id="admin-total-revenue">₦0</strong>
+        </div>
+        <div class="stat-card">
+          <small>Contractor RFQs</small>
+          <strong id="admin-total-quotes">0</strong>
+        </div>
+      </div>
+
+      <div class="admin-orders-table-wrap">
+        <h4>All Customer Orders</h4>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Items</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Update Status</th>
+            </tr>
+          </thead>
+          <tbody id="admin-orders-tbody">
+            <!-- Injected dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SLIDE-OVER SHOPPING CART DRAWER -->
+  <div class="cart-slide-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fa-solid fa-cart-shopping text-orange"></i> Shopping Cart (<span id="cart-drawer-count">0</span>)</h3>
+      <button class="close-drawer-btn" onclick="closeCartDrawer()">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cart-drawer-body">
+      <!-- Injected Dynamically -->
+    </div>
+
+    <div class="cart-drawer-footer" id="cart-drawer-footer">
+      <!-- Promo Code Section -->
+      <div class="promo-box">
+        <input type="text" id="promo-code-input" placeholder="Promo code (e.g. GLOW10)" uppercase>
+        <button type="button" onclick="applyPromoCode()">Apply</button>
+      </div>
+      <div id="promo-applied-msg" class="promo-msg" style="display: none;"></div>
+
+      <div class="cart-summary-lines">
+        <div class="summary-line">
+          <span>Subtotal:</span>
+          <strong id="cart-subtotal">₦0</strong>
+        </div>
+        <div class="summary-line discount-line" id="discount-line" style="display: none;">
+          <span>Promo Discount:</span>
+          <strong class="text-green" id="cart-discount">-₦0</strong>
+        </div>
+        <div class="summary-line">
+          <span>Estimated Delivery:</span>
+          <span id="cart-shipping-text">Calculated at checkout</span>
+        </div>
+        <hr>
+        <div class="summary-line total-line">
+          <span>Total:</span>
+          <strong id="cart-grand-total">₦0</strong>
+        </div>
+      </div>
+
+      <div class="cart-actions-stack">
+        <button class="btn btn-primary w-100 btn-checkout" onclick="openCheckoutModal()">
+          <i class="fa-solid fa-lock"></i> Proceed to Checkout
+        </button>
+        <button class="btn btn-whatsapp-full w-100" onclick="checkoutDirectWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> Order Direct via WhatsApp
+        </button>
+        <button class="btn btn-outline-secondary w-100 btn-clear" onclick="confirmClearCart()">
+          <i class="fa-regular fa-trash-can"></i> Clear Cart
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. PRODUCT QUICK-VIEW MODAL -->
+  <div class="modal-backdrop" id="quick-view-modal">
+    <div class="modal-dialog quick-view-dialog">
+      <button class="modal-close-btn" onclick="closeQuickView()">&times;</button>
+      
+      <div class="quick-view-grid" id="quick-view-content">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CHECKOUT MODAL -->
+  <div class="modal-backdrop" id="checkout-modal">
+    <div class="modal-dialog checkout-dialog">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()">&times;</button>
+      
+      <div class="checkout-header">
+        <h3><i class="fa-solid fa-credit-card text-orange"></i> Complete Your Order</h3>
+        <p>Deliveries dispatched swiftly from our Aseese showroom.</p>
+      </div>
+
+      <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+        <div class="checkout-form-grid">
+          
+          <div class="form-left">
+            <h4 class="form-subheading"><i class="fa-solid fa-address-card"></i> Delivery Information</h4>
+            
+            <div class="form-group">
+              <label for="chk-name">Full Name *</label>
+              <input type="text" id="chk-name" required placeholder="Adeola Johnson">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="chk-phone">Phone Number *</label>
+                <input type="tel" id="chk-phone" required placeholder="08137271212">
+              </div>
+              <div class="form-group">
+                <label for="chk-email">Email Address *</label>
+                <input type="email" id="chk-email" required placeholder="customer@example.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="chk-address">Detailed Delivery Address *</label>
+              <textarea id="chk-address" rows="2" required placeholder="Street address, Estate name, Town / City, Ogun/Lagos State"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="chk-notes">Order Notes / Landmark Instructions (Optional)</label>
+              <input type="text" id="chk-notes" placeholder="e.g. Near Aseese central mosque">
+            </div>
+          </div>
+
+          <div class="form-right">
+            <h4 class="form-subheading"><i class="fa-solid fa-wallet"></i> Payment Method</h4>
+            
+            <div class="payment-options">
+              <label class="payment-card selected">
+                <input type="radio" name="payment-method" value="Bank Transfer" checked onchange="togglePaymentView(this.value)">
+                <div class="p-details">
+                  <strong>Direct Bank Transfer</strong>
+                  <small>Instant invoice &amp; ONWAGLOW company account details</small>
+                </div>
+              </label>
+
+              <label class="payment-card">
+                <input type="radio" name="payment-method" value="Pay on Delivery" onchange="togglePaymentView(this.value)">
+                <div class="p-details">
+                  <strong>Pay on Delivery / Showroom Pickup</strong>
+                  <small>Available in Aseese, Mowe, Ibafo &amp; Lagos corridors</small>
+                </div>
+              </label>
+
+              <label class="payment-card">
+                <input type="radio" name="payment-method" value="WhatsApp Order" onchange="togglePaymentView(this.value)">
+                <div class="p-details">
+                  <strong>Direct WhatsApp Dispatch</strong>
+                  <small>Confirm with sales engineer via WhatsApp</small>
+                </div>
+              </label>
+            </div>
+
+            <!-- Order Total Preview in Checkout -->
+            <div class="checkout-review-box">
+              <div class="cr-row">
+                <span>Items Subtotal:</span>
+                <strong id="chk-subtotal">₦0</strong>
+              </div>
+              <div class="cr-row" id="chk-discount-row" style="display: none;">
+                <span>Discount:</span>
+                <strong class="text-green" id="chk-discount">-₦0</strong>
+              </div>
+              <div class="cr-row">
+                <span>Delivery Logistics:</span>
+                <strong id="chk-shipping">₦5,000</strong>
+              </div>
+              <hr>
+              <div class="cr-row total">
+                <span>Total Amount:</span>
+                <strong id="chk-total">₦0</strong>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 btn-submit-order" id="btn-submit-order">
+              <i class="fa-solid fa-check-circle"></i> Place Order Now
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. ORDER SUCCESS / RECEIPT MODAL -->
+  <div class="modal-backdrop" id="order-success-modal">
+    <div class="modal-dialog success-dialog">
+      <div class="success-header">
+        <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <h2>Thank You for Your Order!</h2>
+        <p>Your order has been received and is being processed by ONWAGLOW Enterprises.</p>
+      </div>
+
+      <div class="order-receipt-card" id="order-receipt-content">
+        <!-- Injected dynamically -->
+      </div>
+
+      <div class="success-actions">
+        <button class="btn btn-whatsapp-full" id="btn-share-order-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Send Order Details to WhatsApp
+        </button>
+        <button class="btn btn-primary" onclick="closeOrderSuccessModal()">
+          <i class="fa-solid fa-shopping-bag"></i> Continue Shopping
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. CONTRACTOR BULK RFQ MODAL -->
+  <div class="modal-backdrop" id="rfq-modal">
+    <div class="modal-dialog rfq-dialog">
+      <button class="modal-close-btn" onclick="closeRFQModal()">&times;</button>
+      
+      <div class="rfq-header">
+        <h3><i class="fa-solid fa-file-invoice text-orange"></i> Contractor &amp; Bulk Quote Request</h3>
+        <p>Fill in your material requirements for direct wholesale quote from our engineers.</p>
+      </div>
+
+      <form id="rfq-form" onsubmit="handleRFQSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="rfq-name">Contractor / Client Name *</label>
+            <input type="text" id="rfq-name" required placeholder="Engr. Timothy Balogun">
+          </div>
+          <div class="form-group">
+            <label for="rfq-phone">Direct Phone Line *</label>
+            <input type="tel" id="rfq-phone" required placeholder="08137271212">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="rfq-email">Email Address</label>
+            <input type="email" id="rfq-email" placeholder="t.balogun@company.ng">
+          </div>
+          <div class="form-group">
+            <label for="rfq-project">Project Type *</label>
+            <select id="rfq-project" required>
+              <option value="Solar Installation (Residential/Commercial)">Solar Installation (Residential/Commercial)</option>
+              <option value="Complete House Conduit Wiring Materials">Complete House Conduit Wiring Materials</option>
+              <option value="Armoured Power Supply Cables">Armoured Power Supply Cables</option>
+              <option value="Lighting Fixtures & Chandeliers">Lighting Fixtures & Chandeliers</option>
+              <option value="Office Furniture & Workstations">Office Furniture & Workstations</option>
+              <option value="Bulk Gas Cylinders & Accessories">Bulk Gas Cylinders & Accessories</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="rfq-location">Project Site Location</label>
+          <input type="text" id="rfq-location" placeholder="e.g. Aseese / Mowe / Ikeja">
+        </div>
+
+        <div class="form-group">
+          <label for="rfq-details">Material Schedule &amp; Required Quantities *</label>
+          <textarea id="rfq-details" rows="4" required placeholder="e.g. 20 coils of 2.5mm cable, 4 coils of 16mm armoured, 12-way DB board, 10 units of 550W panels..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100"><i class="fa-solid fa-paper-plane"></i> Submit Request for Quote</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 9. WISHLIST DRAWER -->
+  <div class="cart-slide-drawer wishlist-drawer" id="wishlist-drawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fa-regular fa-heart text-orange"></i> Saved Wishlist (<span id="wishlist-drawer-count">0</span>)</h3>
+      <button class="close-drawer-btn" onclick="closeWishlistDrawer()">&times;</button>
+    </div>
+    <div class="cart-drawer-body" id="wishlist-drawer-body">
+      <!-- Injected Dynamically -->
+    </div>
+  </div>
+
+  <!-- Toast Notification Box -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Floating Quick WhatsApp Button -->
+  <a href="https://wa.me/2348137271212?text=Hello%20ONWAGLOW%20Enterprises,%20I%20would%20like%20to%20make%20an%20inquiry" target="_blank" class="floating-whatsapp-btn" title="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with ONWAGLOW</span>
+  </a>
+
+  <!-- Frontend Logic Application Script -->
   <script src="script.js"></script>
 </body>
 </html>

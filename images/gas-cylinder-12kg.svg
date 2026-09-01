@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="cylBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="cylinderBody" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="30%" stop-color="#38BDF8" />
+      <stop offset="70%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+    <linearGradient id="brassValve" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="50%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#92400E" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" fill="url(#cylBg)" rx="16" />
+  
+  <g transform="translate(170, 45)">
+    <!-- Base Shadow -->
+    <ellipse cx="80" cy="305" rx="75" ry="14" fill="#64748B" opacity="0.3" />
+    
+    <!-- Foot Ring (Base Stand) -->
+    <path d="M 25 285 L 25 305 Q 80 315 135 305 L 135 285 Z" fill="#0369A1" stroke="#0F172A" stroke-width="1.5" />
+    <ellipse cx="80" cy="285" rx="55" ry="10" fill="#075985" />
+
+    <!-- Main Cylinder Cylindrical Vessel -->
+    <!-- Lower Hemisphere -->
+    <path d="M 10 210 Q 10 280 80 280 Q 150 280 150 210 Z" fill="url(#cylinderBody)" />
+    <!-- Center Cylinder Tube -->
+    <rect x="10" y="95" width="140" height="115" fill="url(#cylinderBody)" />
+    <!-- Upper Hemisphere Dome -->
+    <path d="M 10 95 Q 10 35 80 35 Q 150 35 150 95 Z" fill="url(#cylinderBody)" />
+    
+    <!-- Circumferential Welded Seam Lines -->
+    <ellipse cx="80" cy="95" rx="70" ry="10" fill="none" stroke="#075985" stroke-width="3" />
+    <ellipse cx="80" cy="210" rx="70" ry="10" fill="none" stroke="#075985" stroke-width="3" />
+
+    <!-- Protective Collar Shroud with Carry Handles -->
+    <path d="M 30 50 L 30 10 Q 80 0 130 10 L 130 50 Z" fill="#0284C7" stroke="#075985" stroke-width="2" />
+    <!-- Hand Grip Slots -->
+    <rect x="55" y="15" width="50" height="16" rx="8" fill="#F8FAFC" stroke="#075985" stroke-width="2" />
+
+    <!-- High-Precision Brass Safety Valve in Center -->
+    <rect x="70" y="15" width="20" height="25" rx="3" fill="url(#brassValve)" />
+    <!-- Valve Handwheel / On-off Knob (Safety Red) -->
+    <circle cx="80" cy="12" r="12" fill="#DC2626" stroke="#991B1B" stroke-width="2" />
+
+    <!-- Stamped Brand / Weight Label on Belly -->
+    <rect x="35" y="125" width="90" height="60" rx="8" fill="#0B192C" />
+    <text x="80" y="148" font-family="sans-serif" font-weight="900" font-size="14" fill="#FF8800" text-anchor="middle">ONWAGLOW</text>
+    <text x="80" y="172" font-family="sans-serif" font-weight="900" font-size="18" fill="#FFFFFF" text-anchor="middle">12.5 KG</text>
+  </g>
+
+  <!-- Safety Seal Stamp -->
+  <g transform="translate(50, 60)">
+    <circle cx="35" cy="35" r="30" fill="#10B981" />
+    <text x="35" y="32" font-family="sans-serif" font-weight="900" font-size="11" fill="#FFFFFF" text-anchor="middle">SON</text>
+    <text x="35" y="46" font-family="sans-serif" font-weight="bold" font-size="8" fill="#FFFFFF" text-anchor="middle">CERTIFIED</text>
+  </g>
+
+  <text x="250" y="370" font-family="sans-serif" font-weight="bold" font-size="13" fill="#0B192C" text-anchor="middle">12.5KG SAFETY TESTED LPG GAS CYLINDER</text>
+</svg>
